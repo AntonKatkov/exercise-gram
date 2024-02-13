@@ -1,0 +1,120 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    margin: 0;
+}
+
+
+.navigationContainer {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.navigation {
+    align-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 24px 0;
+    top: 0px;
+    width: 256px;
+    left: 0;
+    bottom: 0;
+}
+
+.navigation nav {
+    width: 100%;
+}
+
+.navigation Img {
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    margin-right: 24px;
+}
+
+.navigation div {
+    display: flex;
+    align-items: center;
+}
+
+
+.button {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    background: white;
+    border-radius: 0 24px 24px 0;
+    padding: 8px 12px 8px 24px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.button:hover {
+    border-radius: 0 24px 24px 0;
+    padding: 8px 12px 8px 24px;
+    background: rgb(120, 194, 231);
+}
+
+
+.ruls {
+    align-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    width: 256px;
+
+}
+
+.ruls div {
+    padding: 17px 24px 24px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+}
+
+.ruls a {
+    color: rgb(95, 99, 104);
+    font-size: small;
+    padding: 5px;
+}
+
+.ruls a:hover {
+    color: #2962ff;
+}
+
+.mainContent {
+    width: calc(100% - 256px);
+    margin-left: 256px;
+    background-color: wheat;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+}
+
+.mainContent div {
+    height: 150px;
+    background-color: white;
+    border: solid 1px black;
+
+
+}
+
+.mainContent img {
+    height: 150px;
+}
+
+.mainContent a {
+    padding: 8px 12px 8px 24px;
+    background-size: cover;
+}
