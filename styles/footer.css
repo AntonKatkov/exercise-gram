@@ -1,0 +1,21 @@
+footer{
+    display: flex;
+    justify-content: center;
+    padding: 12px 24px;
+    position: relative;
+}
+.ruls {
+    align-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ruls a {
+    color: rgb(95, 99, 104);
+    font-size: small;
+    padding: 5px;
+}
+
+.ruls a:hover {
+    color: none;
+}
