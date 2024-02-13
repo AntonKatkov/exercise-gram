@@ -49,16 +49,19 @@ body {
     display: flex;
     flex-direction: row;
     background: white;
-    border-radius: 0 24px 24px 0;
+    border-radius: 5px;
     padding: 8px 12px 8px 24px;
     cursor: pointer;
     align-items: center;
+    transition: background-color 1s ease-out 10ms
 }
 
 .button:hover {
-    border-radius: 0 24px 24px 0;
+    margin-left: 5px;
+    border-radius: 5px;
     padding: 8px 12px 8px 24px;
     background: rgb(120, 194, 231);
+
 }
 
 section {
