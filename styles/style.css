@@ -53,11 +53,14 @@ body {
     padding: 8px 12px 8px 24px;
     cursor: pointer;
     align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
     transition: background-color 1s ease-out 10ms
 }
 
 .button:hover {
-    margin-left: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
     border-radius: 5px;
     padding: 8px 12px 8px 24px;
     background: rgb(120, 194, 231);
@@ -73,9 +76,6 @@ section {
 .mainContent {
     background-color: wheat;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-content: flex-start;
 }
 
 .mainContent div {
