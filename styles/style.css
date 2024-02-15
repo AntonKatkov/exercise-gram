@@ -78,7 +78,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    flex-direction: column;
 }
 .sMarginList{
     margin: 5px 0px;
@@ -108,4 +108,18 @@ section {
     max-width: 630px;
     width: 100%;
     overflow: scroll;
+}
+.newPosts{
+    margin-top: 24px;
+}
+.posts{
+    max-width: 100%;
+    width: min(470px ,100vw)
+}
+
+.displayFlex{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
