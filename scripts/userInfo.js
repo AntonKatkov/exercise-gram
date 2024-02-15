@@ -2,6 +2,7 @@
 let userInfo = [
     {
         "author": "Strannik",
+        "avatar": "./img/img-1.png",
         "test1": "test1",
         "test2": "test2",
         "test3": "test3",
@@ -9,34 +10,7 @@ let userInfo = [
     },
     {
         "author": "Strannik2",
-        "test1": "test1",
-        "test2": "test2",
-        "test3": "test3",
-        "comments": []
-    },
-    {
-        "author": "Strannik3",
-        "test1": "test1",
-        "test2": "test2",
-        "test3": "test3",
-        "comments": []
-    },
-    {
-        "author": "Strannik4",
-        "test1": "test1",
-        "test2": "test2",
-        "test3": "test3",
-        "comments": []
-    },
-    {
-        "author": "Strannik5",
-        "test1": "test1",
-        "test2": "test2",
-        "test3": "test3",
-        "comments": []
-    },
-    {
-        "author": "Strannik6",
+        "avatar": "./img/img-2.jpg",
         "test1": "test1",
         "test2": "test2",
         "test3": "test3",

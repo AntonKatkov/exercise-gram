@@ -6,9 +6,10 @@ function render() {
 
     for (let i = 0; i < userInfo.length; i++) {
         let user = userInfo[i];
-        let userID =  user['author']
+        let userName =  user['author']
+        let userAvatar = user['avatar']
 
-        content.innerHTML += returnHTML(userID);
+        content.innerHTML += returnHTML(user,i ,userName, userAvatar);
         ;
     }
 }
