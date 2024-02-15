@@ -1,11 +1,10 @@
 function returnHTML(user,i, userName, userAvatar) {
     return `
-    <div>
-        <ul>
+          <ul>
             <li>
                 <div>
-                    <button>
-                            <div role="button">
+                    <button class="mMarginList">
+                            <div class="sMarginList" role="button">
                                 <img class="avatarImg" id="myImg${user}" src="${userAvatar}" alt="imgNr ${user}">
                             </div>
                             <div>
@@ -14,6 +13,5 @@ function returnHTML(user,i, userName, userAvatar) {
                     </button>
                 </div>
             </li>
-        </ul>
-    </div>`;
+        </ul>`;
 }

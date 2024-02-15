@@ -1,7 +1,7 @@
 
 
 function render() {
-    let content = document.getElementById('content');
+    let content = document.getElementById('infoContent');
     content.innerHTML = '';
 
     for (let i = 0; i < userInfo.length; i++) {

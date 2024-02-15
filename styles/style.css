@@ -78,11 +78,20 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+
+}
+.sMarginList{
+    margin: 5px 0px;
 }
 
-.mainContent div {
-    background-color: white;
-    border: solid 1px black;
+.mMarginList{
+    margin: 0px 16px;
+}
+.mainContent ul {
+    display: contents;
+}
+.mainContent ul li{
+    list-style: none;
 }
 
 .mainContent a {
@@ -93,4 +102,10 @@ section {
 .avatarImg {
     height: 56px;
     width: 56px;
+}
+.newInfo{
+    display: flex;
+    max-width: 630px;
+    width: 100%;
+    overflow: scroll;
 }
