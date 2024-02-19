@@ -19,7 +19,7 @@ function newPostRender() {
         let user = userInfo[i];
         let userName = user['author']
         let userAvatar = user['avatar']
-        let userLikeicon = user['saveicon']
+        let userLikeicon = user['likeicon']
         let userCommentsIcon = user['commentsicon']
         let userSendicon = user['sendicon']
         let userSaveicon = user['saveicon']

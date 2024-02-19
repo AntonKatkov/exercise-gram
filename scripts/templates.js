@@ -20,7 +20,7 @@ function returnHTML(user, i, userName, userAvatar) {
 
 function newPostHTML(user, i, userName, userAvatar, userLikeicon, userCommentsIcon, userSendicon, userSaveicon) {
     return `
-    <div class="posts">
+    <div class="posts" id="${i}">
         <div>
             <div>
                 <article>
@@ -51,6 +51,10 @@ function newPostHTML(user, i, userName, userAvatar, userLikeicon, userCommentsIc
                                     <img class="iconButtonSize" id="myImg" src="${userSaveicon}" alt="imgNr${user}">
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                        <div>
+                            <input id="${i}" class="inputfield" type="text" placeholder="Add as comment....">
                         </div>
                 </article>
             </div>
