@@ -123,3 +123,28 @@ section {
     align-items: center;
     gap: 15px;
 }
+
+.view-Post{
+    width: 100%;
+    height: 100%;
+}
+.profielePadding{
+    padding: 0px 0px 12px 4px;
+}
+
+.iconspostbox{
+    display: flex;
+    justify-content: space-between;
+}
+.iconsbuttons{
+    display: flex;
+    gap: 15px;
+}
+.iconButtonSize{
+    height: 24px;
+    width: 24px;
+}
+.iconButtonSize:hover{
+    background-color: aliceblue;
+    cursor: pointer;
+}

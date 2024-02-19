@@ -1,4 +1,4 @@
-function returnHTML(user,i, userName, userAvatar) {
+function returnHTML(user, i, userName, userAvatar) {
     return `
           <ul>
             <li>
@@ -18,20 +18,40 @@ function returnHTML(user,i, userName, userAvatar) {
 
 
 
-function newPostHTML(user,i ,userName, userAvatar){
-return`
+function newPostHTML(user, i, userName, userAvatar, userLikeicon, userCommentsIcon, userSendicon, userSaveicon) {
+    return `
     <div class="posts">
         <div>
             <div>
                 <article>
                     <div>
                         <div>
-                            <div class="displayFlex">
-                                <img class="avatarImg" id="myImg${user}" src="${userAvatar}" alt="imgNr ${user}">
-                                <span>${userName}</span>
+                        <div class="displayFlex profielePadding">
+                        <img class="avatarImg" id="myImg${user}" src="${userAvatar}" alt="imgNr ${user}">
+                        <span>${userName}</span><span>*</span><span>days</span>
+                    </div>
+                            <div>
+                            <img class="view-Post" id="myImg${user}" src="${userAvatar}" alt="imgNr ${user}">
+                            </div>
+                    </div>
+                        <div class="iconspostbox">
+                            <div class="iconsbuttons">
+                                <div>
+                                    <img class="iconButtonSize" id="myImg" src="${userLikeicon}" alt="imgNr${user}">
+                                </div>
+                                <div>
+                                    <img class="iconButtonSize" id="myImg" src="${userCommentsIcon}" alt="imgNr${user}">
+                                </div>
+                                <div>
+                                    <img class="iconButtonSize" id="myImg" src="${userSendicon}" alt="imgNr${user}">
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <img class="iconButtonSize" id="myImg" src="${userSaveicon}" alt="imgNr${user}">
+                                </div>
                             </div>
                         </div>
-                    </div>
                 </article>
             </div>
         </div>

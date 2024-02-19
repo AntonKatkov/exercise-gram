@@ -4,9 +4,9 @@ function newInfoRender() {
 
     for (let i = 0; i < userInfo.length; i++) {
         let user = userInfo[i];
-        let userName =  user['author']
+        let userName = user['author']
         let userAvatar = user['avatar']
-        content.innerHTML += returnHTML(user,i ,userName, userAvatar);
+        content.innerHTML += returnHTML(user, i, userName, userAvatar);
         ;
     }
 }
@@ -15,18 +15,20 @@ function newPostRender() {
     let postContent = document.getElementById('postContent');
     postContent.innerHTML = '';
 
-
-
     for (let i = 0; i < userInfo.length; i++) {
         let user = userInfo[i];
-        let userName =  user['author']
+        let userName = user['author']
         let userAvatar = user['avatar']
-        postContent.innerHTML += newPostHTML(user,i ,userName, userAvatar);
+        let userLikeicon = user['saveicon']
+        let userCommentsIcon = user['commentsicon']
+        let userSendicon = user['sendicon']
+        let userSaveicon = user['saveicon']
+        postContent.innerHTML += newPostHTML(user, i, userName, userAvatar, userLikeicon, userCommentsIcon,userSendicon,userSaveicon);
         ;
     }
 }
 
-function Start(){
+function Start() {
     newInfoRender()
     newPostRender()
 }
