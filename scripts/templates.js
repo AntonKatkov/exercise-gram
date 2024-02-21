@@ -3,7 +3,7 @@ function returnHTML(user, i, userName, userAvatar) {
           <ul>
             <li>
                 <div>
-                    <button class="mMarginList">
+                    <button class="mMarginList buttonlist">
                     <div class="sMarginList" role="button">
                     <img class="avatarImg" id="myImg${user}" src="${userAvatar}" alt="imgNr ${user}">
                     </div>
@@ -18,7 +18,7 @@ function returnHTML(user, i, userName, userAvatar) {
 
 
 
-function newPostHTML(user, i, userName, userAvatar, userLikeicon, userCommentsIcon, userSendicon, userSaveicon) {
+function newPostHTML(user, i, userName, userAvatar, userLikeicon, userCommentsIcon, userSendicon, userSaveicon,) {
     return `
     <div class="posts" id="${i}">
         <div>
@@ -53,15 +53,21 @@ function newPostHTML(user, i, userName, userAvatar, userLikeicon, userCommentsIc
                             </div>
                         </div>
                     </div>
-                        <div>
-                            <input id="${i}" class="inputfield" type="text" placeholder="Add as comment....">
-                        </div>
+                    <div id="comment${i}"></div>
+                    <div class="paddingBottom">
+                            <div class="flexContainerMessege">
+                                <input id="input${i}" class="inputfield" type="text" placeholder="Add as comment....">
+                                <button onclick="commendAdd(${i})">Post</button>
+                            </div>
+                    </div>
                 </article>
             </div>
         </div>
     </div>
 
 `
+
+
 
 
 }

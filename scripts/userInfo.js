@@ -7,7 +7,7 @@ let userInfo = [
         "commentsicon": "./img/imgicons/chatIcon.svg",
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
-        "comments": []
+        "comments": ['test','was geht abbbbbbbbb',]
     },
     {
         "author": "Strannik2",
@@ -16,7 +16,7 @@ let userInfo = [
         "commentsicon": "./img/imgicons/chatIcon.svg",
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
-        "comments": []
+        "comments": ['schön','was geht bei dir ab krass',]
     },
     {
         "author": "Strannik2",
@@ -25,7 +25,7 @@ let userInfo = [
         "commentsicon": "./img/imgicons/chatIcon.svg",
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
-        "comments": []
+        "comments": ['lol was geht',]
     },
     {
         "author": "Strannik2",
@@ -34,7 +34,7 @@ let userInfo = [
         "commentsicon": "./img/imgicons/chatIcon.svg",
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
-        "comments": []
+        "comments": ['xxxx','xx',]
     },
     {
         "author": "Strannik2",

@@ -23,12 +23,27 @@ function newPostRender() {
         let userCommentsIcon = user['commentsicon']
         let userSendicon = user['sendicon']
         let userSaveicon = user['saveicon']
-        postContent.innerHTML += newPostHTML(user, i, userName, userAvatar, userLikeicon, userCommentsIcon,userSendicon,userSaveicon);
+        postContent.innerHTML += newPostHTML(user, i, userName, userAvatar, userLikeicon, userCommentsIcon, userSendicon, userSaveicon,);
         ;
+
+
+        let usercommentsTextLength = document.getElementById(`comment${i}`);
+        for (let x = 0; x < user['comments'].length; x++) {
+            const comment = user['comments'][x];
+            usercommentsTextLength.innerHTML += `<div> ${comment} </div>`
+        }
     }
 }
 
 function Start() {
     newInfoRender()
+    newPostRender()
+}
+
+function commendAdd(index) {
+    let inputs = document.getElementById(`input${index}`);
+
+    userInfo[index]['comments'].push(inputs.value)
+
     newPostRender()
 }

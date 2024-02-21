@@ -80,17 +80,20 @@ section {
     justify-content: center;
     flex-direction: column;
 }
-.sMarginList{
+
+.sMarginList {
     margin: 5px 0px;
 }
 
-.mMarginList{
+.mMarginList {
     margin: 0px 16px;
 }
+
 .mainContent ul {
     display: contents;
 }
-.mainContent ul li{
+
+.mainContent ul li {
     list-style: none;
 }
 
@@ -102,53 +105,82 @@ section {
 .avatarImg {
     height: 56px;
     width: 56px;
+    border-radius: 50px;
+    background-size: cover;
 }
-.newInfo{
+
+.newInfo {
     display: flex;
     max-width: 630px;
     width: 100%;
     overflow: scroll;
 }
-.newPosts{
+
+.newPosts {
     margin-top: 24px;
 }
-.posts{
+
+.posts {
     max-width: 100%;
-    width: min(470px ,100vw)
+    width: min(470px, 100vw)
 }
 
-.displayFlex{
+.displayFlex {
     text-align: center;
     display: flex;
     align-items: center;
     gap: 15px;
 }
 
-.view-Post{
+.view-Post {
     width: 100%;
     height: 100%;
+    border-radius: 15px;
 }
-.profielePadding{
+
+.profielePadding {
     padding: 0px 0px 12px 4px;
 }
 
-.iconspostbox{
+.iconspostbox {
     display: flex;
     justify-content: space-between;
     margin: 8px 0px;
 }
-.iconsbuttons{
+
+.iconsbuttons {
     display: flex;
     gap: 15px;
 }
-.iconButtonSize{
+
+.iconButtonSize {
     height: 24px;
     width: 24px;
 }
-.iconButtonSize:hover{
+
+.iconButtonSize:hover {
     background-color: aliceblue;
     cursor: pointer;
 }
-.inputfield{
-    width: 85%;
+
+.buttonlist {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.flexContainerMessege{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.inputfield {
+    flex: 1 0 250px;
+}
+.flexContainerMessege,button{
+    flex: 1 0 10px;
+}
+.paddingBottom{
+    padding-bottom: 15px;
 }
