@@ -30,20 +30,34 @@ function newPostRender() {
         let usercommentsTextLength = document.getElementById(`comment${i}`);
         for (let x = 0; x < user['comments'].length; x++) {
             const comment = user['comments'][x];
-            usercommentsTextLength.innerHTML += `<div> ${comment} </div>`
+            usercommentsTextLength.innerHTML += `<div class="comentspadding"> ${comment} </div>`
         }
     }
 }
 
+function renderProfile(){
+    let profileContent = document.getElementById('profileContent');
+    profileContent.innerHTML = '';
+
+    for (let i = 0; i < userInfo.length; i++) {
+        let user = userInfo[i];
+        let userName = user['author']
+        let userAvatar = user['avatar']
+
+        profileContent.innerHTML += profileHTML(user, i, userName, userAvatar,);
+    }
+
+}
+
+
 function Start() {
     newInfoRender()
     newPostRender()
+    renderProfile()
 }
 
 function commendAdd(index) {
     let inputs = document.getElementById(`input${index}`);
-
     userInfo[index]['comments'].push(inputs.value)
-
     newPostRender()
 }

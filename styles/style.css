@@ -76,6 +76,13 @@ section {
 .mainContent {
     background-color: wheat;
     display: flex;
+    justify-content: center;
+    padding-left: 24px;
+}
+
+.mainContentInputs {
+    background-color: wheat;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -106,6 +113,8 @@ section {
     height: 56px;
     width: 56px;
     border-radius: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -169,7 +178,7 @@ section {
     cursor: pointer;
 }
 
-.flexContainerMessege{
+.flexContainerMessege {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
@@ -178,9 +187,39 @@ section {
 .inputfield {
     flex: 1 0 250px;
 }
-.flexContainerMessege,button{
+
+.flexContainerMessege,
+button {
     flex: 1 0 10px;
 }
-.paddingBottom{
+
+.padding {
+    padding-top: 15px;
     padding-bottom: 15px;
+}
+
+.comentspadding {
+    padding: 5px 0px 5px 0px;
+}
+
+.onepxline {
+    margin: 10px 0;
+    border: 0;
+    border-top: 1px solid #383838;
+}
+
+.myProfile{
+    display: flex;
+    padding-left: 64px;
+    flex-direction: column;
+}
+
+.buttonProfilelist{
+    display: flex;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    gap: 15px;
+
 }
