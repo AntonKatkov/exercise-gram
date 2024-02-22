@@ -68,8 +68,8 @@ body {
 }
 
 section {
-    width: calc(100% - 256px);
-    margin-left: 256px;
+    width: calc(100% - 335px);
+    margin-left: 335px;
     padding-top: 24px;
 }
 
@@ -212,6 +212,7 @@ button {
     display: flex;
     padding-left: 64px;
     flex-direction: column;
+    width: 383px;
 }
 
 .buttonProfilelist{
@@ -222,4 +223,16 @@ button {
     align-items: center;
     gap: 15px;
 
+}
+
+.dFlex{
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    justify-content: space-between;
+}
+
+.dFlexcolum{
+    display: flex;
+    flex-direction: column;
 }

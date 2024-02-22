@@ -73,20 +73,22 @@ function newPostHTML(user, i, userName, userAvatar, userLikeicon, userCommentsIc
 function profileHTML(user, i, userName, userAvatar,) {
     return `
     <div>
-        <ul>
-        <li>
+        <div>
             <div>
-                <button class="mMarginList buttonProfilelist">
-                <div class="sMarginList" role="button">
-                <img class="avatarImg" id="myImg${user}" src="${userAvatar}" alt="imgNr ${user}">
+                <div class="dFlex">
+                    <div class="sMarginList dFlex">
+                        <img role="button" class="avatarImg buttonProfilelist" id="myImg${user}" src="${userAvatar}" alt="imgNr ${user}">
+                        <div class="dFlexcolum">
+                            <span role="button">profile</span>
+                            <span>nick NAme</span>
+                        </div>
+                    </div>
+                    <div>
+                        Follow
+                    </div>
                 </div>
-                        <div>
-                            <span>${userName}</span>
-                        <div>
-                </button>
             </div>
-        </li>
-    </ul>
+       </div>
     </div>
     `;
 
