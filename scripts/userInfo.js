@@ -2,6 +2,8 @@
 let userInfo = [
     {
         "author": "Strannik",
+        "authorName": "Anton K",
+        "createdAt": Date(),
         "avatar": "./img/ImgProfiele/img-1.png",
         "likeicon": "./img/imgicons/hearthIcon.svg",
         "commentsicon": "./img/imgicons/chatIcon.svg",
@@ -11,6 +13,8 @@ let userInfo = [
     },
     {
         "author": "Strannik2",
+        "authorName": "hans",
+        "createdAt": Date(),
         "avatar": "./img/ImgProfiele/img-2.jpg",
         "likeicon": "./img/imgicons/hearthIcon.svg",
         "commentsicon": "./img/imgicons/chatIcon.svg",
@@ -19,7 +23,9 @@ let userInfo = [
         "comments": ['schön','was geht bei dir ab krass',]
     },
     {
-        "author": "Strannik2",
+        "author": "Strannik3",
+        "authorName": "peter",
+        "createdAt": Date(),
         "avatar": "./img/ImgProfiele/img-1.png",
         "likeicon": "./img/imgicons/hearthIcon.svg",
         "commentsicon": "./img/imgicons/chatIcon.svg",
@@ -28,7 +34,9 @@ let userInfo = [
         "comments": ['lol was geht',]
     },
     {
-        "author": "Strannik2",
+        "author": "Strannik4",
+        "authorName": "julian",
+        "createdAt": Date(),
         "avatar": "./img/ImgProfiele/img-2.jpg",
         "likeicon": "./img/imgicons/hearthIcon.svg",
         "commentsicon": "./img/imgicons/chatIcon.svg",
@@ -37,7 +45,9 @@ let userInfo = [
         "comments": ['xxxx','xx',]
     },
     {
-        "author": "Strannik2",
+        "author": "Strannik5",
+        "authorName": "Bober Kurwa",
+        "createdAt": Date(),
         "avatar": "./img/ImgProfiele/img-1.png",
         "likeicon": "./img/imgicons/hearthIcon.svg",
         "commentsicon": "./img/imgicons/chatIcon.svg",
@@ -45,40 +55,5 @@ let userInfo = [
         "saveicon": "./img/imgicons/saveIcon.svg",
         "comments": []
     },
-    {
-        "author": "Strannik2",
-        "avatar": "./img/ImgProfiele/img-2.jpg",
-        "likeicon": "./img/imgicons/hearthIcon.svg",
-        "commentsicon": "./img/imgicons/chatIcon.svg",
-        "sendicon": "./img/imgicons/sendIcon.svg",
-        "saveicon": "./img/imgicons/saveIcon.svg",
-        "comments": []
-    },
-    {
-        "author": "Strannik2",
-        "avatar": "./img/ImgProfiele/img-1.png",
-        "likeicon": "./img/imgicons/hearthIcon.svg",
-        "commentsicon": "./img/imgicons/chatIcon.svg",
-        "sendicon": "./img/imgicons/sendIcon.svg",
-        "saveicon": "./img/imgicons/saveIcon.svg",
-        "comments": []
-    },
-    {
-        "author": "Strannik2",
-        "avatar": "./img/ImgProfiele/img-2.jpg",
-        "likeicon": "./img/imgicons/hearthIcon.svg",
-        "commentsicon": "./img/imgicons/chatIcon.svg",
-        "sendicon": "./img/imgicons/sendIcon.svg",
-        "saveicon": "./img/imgicons/saveIcon.svg",
-        "comments": []
-    },
-    {
-        "author": "Strannik2",
-        "avatar": "./img/ImgProfiele/img-1.png",
-        "likeicon": "./img/imgicons/hearthIcon.svg",
-        "commentsicon": "./img/imgicons/chatIcon.svg",
-        "sendicon": "./img/imgicons/sendIcon.svg",
-        "saveicon": "./img/imgicons/saveIcon.svg",
-        "comments": []
-    },
+    
 ];

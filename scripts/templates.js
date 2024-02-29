@@ -18,7 +18,8 @@ function returnHTML(user, i, userName, userAvatar) {
 
 
 
-function newPostHTML(user, i, userName, userAvatar, userLikeicon, userCommentsIcon, userSendicon, userSaveicon,) {
+function newPostHTML(user, i, userNickName, userDate, userAvatar, userLikeicon, userCommentsIcon, userSendicon, userSaveicon,) {
+    const formattedDate = formatDate(new Date(userDate));
     return `
     <div class="posts" id="${i}">
         <div>
@@ -28,7 +29,7 @@ function newPostHTML(user, i, userName, userAvatar, userLikeicon, userCommentsIc
                         <div>
                         <div class="displayFlex profielePadding">
                         <img class="avatarImg" id="myImg${user}" src="${userAvatar}" alt="imgNr ${user}">
-                        <span>${userName}</span><span>*</span><span>days</span>
+                        <span>${userNickName}</span><span>*</span><span>${formattedDate}</span>
                     </div>
                             <div>
                             <img class="view-Post" id="myImg${user}" src="${userAvatar}" alt="imgNr ${user}">
@@ -70,17 +71,18 @@ function newPostHTML(user, i, userName, userAvatar, userLikeicon, userCommentsIc
     `;
 }
 
-function profileHTML(user, i, userName, userAvatar,) {
+function profileHTML(user, i, userName, userNickName, userAvatar,) {
     return `
     <div>
         <div>
             <div>
                 <div class="dFlex">
                     <div class="sMarginList dFlex">
-                        <img role="button" class="avatarImg buttonProfilelist" id="myImg${user}" src="${userAvatar}" alt="imgNr ${user}">
-                        <div class="dFlexcolum">
-                            <span role="button">profile</span>
-                            <span>nick NAme</span>
+                    
+                    <a class="externlink" href=""><img role="button" class="avatarImg buttonProfilelist" id="myImg${user}" src="${userAvatar}" alt="imgNr ${user}"></a>
+                        <div class="dflexC">
+                            <span role="button">${userNickName}</span>
+                            <span>${userName}</span>
                         </div>
                     </div>
                     <div>
