@@ -130,7 +130,7 @@ function submitUserInfo() {
 
     document.getElementById('authorInput').value = '';
     document.getElementById('authorNameInput').value = '';
-
+    closeModal()
     Start()
 }
 

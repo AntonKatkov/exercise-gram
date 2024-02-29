@@ -105,6 +105,7 @@ function modalFunction(i) {
     <div class="dflexC gap">
         <input id="authorInput" placeholder="Author">
         <input id="authorNameInput" placeholder="Author Name">
+        <textarea></textarea>
         <button onclick="submitUserInfo()">Submit</button>
     </div>
 </div>

@@ -126,6 +126,9 @@ section {
 
 .newPosts {
     margin-top: 24px;
+    display: flex;
+    flex-direction: column-reverse;
+    
 }
 
 .posts {
