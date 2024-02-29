@@ -1,5 +1,5 @@
 
-let userInfo = [
+let userInfos = [
     {
         "author": "Strannik",
         "authorName": "Anton K",

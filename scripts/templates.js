@@ -28,7 +28,7 @@ function newPostHTML(user, i, userNickName, userDate, userAvatar, userLikeicon, 
                     <div>
                         <div>
                         <div class="displayFlex profielePadding">
-                        <img class="avatarImg" id="myImg${user}" src="${userAvatar}" alt="imgNr ${user}">
+                        <img class="avatarImg" id="${user}" src="${userAvatar}" alt="imgNr ${user}">
                         <span>${userNickName}</span><span>*</span><span>${formattedDate}</span>
                     </div>
                             <div>
@@ -96,3 +96,17 @@ function profileHTML(user, i, userName, userNickName, userAvatar,) {
 
 }
 
+
+
+function modalFunction(i) {
+    return `
+    <div class="modal-content">  
+    <span class="close" onclick="closeModal(${i})">&times;</span>
+    <div class="dflexC gap">
+        <input id="authorInput" placeholder="Author">
+        <input id="authorNameInput" placeholder="Author Name">
+        <button onclick="submitUserInfo()">Submit</button>
+    </div>
+</div>
+  `
+  }

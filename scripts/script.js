@@ -2,8 +2,8 @@ function newInfoRender() {
     let content = document.getElementById('infoContent');
     content.innerHTML = '';
 
-    for (let i = 0; i < userInfo.length; i++) {
-        let user = userInfo[i];
+    for (let i = 0; i < userInfos.length; i++) {
+        let user = userInfos[i];
         let userNickName = user['author']
         let userAvatar = user['avatar']
         content.innerHTML += returnHTML(user, i, userNickName, userAvatar);
@@ -15,8 +15,8 @@ function newPostRender() {
     let postContent = document.getElementById('postContent');
     postContent.innerHTML = '';
 
-    for (let i = 0; i < userInfo.length; i++) {
-        let user = userInfo[i];
+    for (let i = 0; i < userInfos.length; i++) {
+        let user = userInfos[i];
         let userNickName = user['author']
         let userDate= user['createdAt']
         let userAvatar = user['avatar']
@@ -40,8 +40,8 @@ function renderProfile(){
     let profileContent = document.getElementById('profileContent');
     profileContent.innerHTML = '';
 
-    for (let i = 0; i < userInfo.length; i++) {
-        let user = userInfo[i];
+    for (let i = 0; i < userInfos.length; i++) {
+        let user = userInfos[i];
         let userNickName = user['author']
         let userName =user['authorName']
         let userAvatar = user['avatar']
@@ -61,7 +61,7 @@ function Start() {
 
 function commendAdd(index) {
     let inputs = document.getElementById(`input${index}`);
-    userInfo[index]['comments'].push(inputs.value)
+    userInfos[index]['comments'].push(inputs.value)
     newPostRender()
 }
 
@@ -81,3 +81,58 @@ function formatDate(date) {
 
     return day + '.' + month + '.' + year; // Format: DD.MM.YYYY
 }
+
+
+
+function CreatePost(i) {
+    // Modal dynamisch erstellen oder ein existierendes Modal finden
+    var modal = document.getElementById("modal" + i);
+    if (!modal) {
+        // Modal existiert nicht, also erstelle es dynamisch (optional)
+        modal = document.createElement("div");
+        modal.id = "modal" + i;
+        modal.className = "modal";
+        modal.innerHTML = modalFunction(i);
+        document.body.appendChild(modal);
+    }
+    
+    // Modal anzeigen
+    modal.style.display = "block";
+}
+
+function closeModal(i) {
+    var modal = document.getElementById("modal" + i);
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+function submitUserInfo() {
+    let author = document.getElementById('authorInput').value;
+    let authorName = document.getElementById('authorNameInput').value;
+
+    let createdAt = new Date(); // Erfasst das aktuelle Datum und die Uhrzeit
+
+    let userInfo = {
+        "author": author,
+        "authorName": authorName,
+        "createdAt": createdAt,
+        "avatar": "./img/ImgProfiele/img-1.png",
+        "likeicon": "./img/imgicons/hearthIcon.svg",
+        "commentsicon": "./img/imgicons/chatIcon.svg",
+        "sendicon": "./img/imgicons/sendIcon.svg",
+        "saveicon": "./img/imgicons/saveIcon.svg",
+        "comments": []
+    };
+
+    userInfos.push(userInfo);
+
+    document.getElementById('authorInput').value = '';
+    document.getElementById('authorNameInput').value = '';
+
+    Start()
+}
+
+
+    
