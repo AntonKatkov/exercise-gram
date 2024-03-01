@@ -33,6 +33,13 @@ function newPostRender() {
             const comment = user['comments'][x];
             usercommentsTextLength.innerHTML += `<div class="comentspadding"> ${comment} </div>`
         }
+
+        let posttext = document.getElementById(`posttext${i}`);
+        for (let b = 0; b < user['posttext'].length; b++) {
+            const postinfo = user['posttext'][b];
+            posttext.innerHTML += `<div class=""> ${postinfo} </div>`
+        }
+        
     }
 }
 
@@ -111,6 +118,7 @@ function closeModal(i) {
 function submitUserInfo() {
     let author = document.getElementById('authorInput').value;
     let authorName = document.getElementById('authorNameInput').value;
+    let posttext = document.getElementById('posttext').value;
 
     let createdAt = new Date(); // Erfasst das aktuelle Datum und die Uhrzeit
 
@@ -123,6 +131,7 @@ function submitUserInfo() {
         "commentsicon": "./img/imgicons/chatIcon.svg",
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
+        "posttext": [posttext],
         "comments": []
     };
 
@@ -130,6 +139,7 @@ function submitUserInfo() {
 
     document.getElementById('authorInput').value = '';
     document.getElementById('authorNameInput').value = '';
+    document.getElementById('posttext').value ='';
     closeModal()
     Start()
 }

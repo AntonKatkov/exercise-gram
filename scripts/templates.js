@@ -54,7 +54,7 @@ function newPostHTML(user, i, userNickName, userDate, userAvatar, userLikeicon, 
                             </div>
                         </div>
                     </div>
-                    <div>beschreibung</div>
+                    <div id="posttext${i}"></div>
                         <div id="comment${i}"></div>
                             <div class="padding">
                                 <div class="flexContainerMessege">
@@ -105,7 +105,7 @@ function modalFunction(i) {
     <div class="dflexC gap">
         <input id="authorInput" placeholder="Author">
         <input id="authorNameInput" placeholder="Author Name">
-        <textarea></textarea>
+        <textarea id="posttext" placeholder="Your Text"></textarea>
         <button onclick="submitUserInfo()">Submit</button>
     </div>
 </div>
