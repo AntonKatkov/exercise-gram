@@ -1,8 +1,9 @@
+
 function newInfoRender() {
     let content = document.getElementById('infoContent');
     content.innerHTML = '';
 
-    for (let i = 0; i < userInfos.length; i++) {
+    for (let i = 0; i < Math.min(userInfos.length, 6); i++) {
         let user = userInfos[i];
         let userNickName = user['author']
         let userAvatar = user['avatar']
@@ -24,7 +25,8 @@ function newPostRender() {
         let userCommentsIcon = user['commentsicon']
         let userSendicon = user['sendicon']
         let userSaveicon = user['saveicon']
-        postContent.innerHTML += newPostHTML(user, i, userNickName, userDate, userAvatar, userLikeicon, userCommentsIcon, userSendicon, userSaveicon,);
+        let infotext = user['posttext']
+        postContent.innerHTML += newPostHTML(user, i, infotext, userNickName, userDate, userAvatar, userLikeicon, userCommentsIcon, userSendicon, userSaveicon,);
         ;
 
 
@@ -34,12 +36,6 @@ function newPostRender() {
             usercommentsTextLength.innerHTML += `<div class="comentspadding"> ${comment} </div>`
         }
 
-        let posttext = document.getElementById(`posttext${i}`);
-        for (let b = 0; b < user['posttext'].length; b++) {
-            const postinfo = user['posttext'][b];
-            posttext.innerHTML += `<div class=""> ${postinfo} </div>`
-        }
-        
     }
 }
 
@@ -47,7 +43,7 @@ function renderProfile(){
     let profileContent = document.getElementById('profileContent');
     profileContent.innerHTML = '';
 
-    for (let i = 0; i < userInfos.length; i++) {
+    for (let i = 0; i < Math.min(userInfos.length, 5); i++) {
         let user = userInfos[i];
         let userNickName = user['author']
         let userName =user['authorName']
@@ -61,14 +57,17 @@ function renderProfile(){
 
 
 function Start() {
+    loadUserInfo()
     newInfoRender()
     newPostRender()
     renderProfile()
+
 }
 
 function commendAdd(index) {
     let inputs = document.getElementById(`input${index}`);
     userInfos[index]['comments'].push(inputs.value)
+    saveUserInfo()
     newPostRender()
 }
 
@@ -131,18 +130,52 @@ function submitUserInfo() {
         "commentsicon": "./img/imgicons/chatIcon.svg",
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
-        "posttext": [posttext],
+        "posttext": posttext,
         "comments": []
     };
-
     userInfos.push(userInfo);
+    saveUserInfo()
 
     document.getElementById('authorInput').value = '';
     document.getElementById('authorNameInput').value = '';
-    document.getElementById('posttext').value ='';
-    closeModal()
-    Start()
+    document.getElementById('posttext').value = '';
+    closeModal();
+    Start();
 }
 
 
-    
+function saveUserInfo() {
+    // Speichere das aktuelle userInfos-Array im localStorage
+    localStorage.setItem('userInfos', JSON.stringify(userInfos));
+}
+
+// Beispiel: Hinzufügen eines neuen Benutzerinfo-Objekts
+function addNewUserInfo(newUserInfo) {
+    userInfos.push(newUserInfo); // Füge das neue Objekt zum Array hinzu
+    saveUserInfo(); // Speichere das aktualisierte Array im localStorage
+}
+
+function loadUserInfo() {
+    // Prüfe, ob bereits Daten im localStorage vorhanden sind
+    let storedUserInfos = localStorage.getItem('userInfos');
+    if (storedUserInfos) {
+        // Wenn ja, parse den String zu einem Array und verwende es
+        userInfos = JSON.parse(storedUserInfos);
+    }
+}
+
+
+
+function addDiv(parentId) {
+    const parent = document.getElementById(parentId);
+    const existingDivs = parent.querySelectorAll('div');
+
+    // Prüfe, ob die maximale Anzahl erreicht ist
+    if (existingDivs.length < 5) {
+        const newDiv = document.createElement('div');
+        newDiv.textContent = `Element ${existingDivs.length + 1}`;
+        parent.appendChild(newDiv);
+    } else {
+        console.log('Maximale Anzahl von 5 divs erreicht.');
+    }
+}

@@ -18,7 +18,7 @@ function returnHTML(user, i, userName, userAvatar) {
 
 
 
-function newPostHTML(user, i, userNickName, userDate, userAvatar, userLikeicon, userCommentsIcon, userSendicon, userSaveicon,) {
+function newPostHTML(user, i, infotext, userNickName, userDate, userAvatar, userLikeicon, userCommentsIcon, userSendicon, userSaveicon,) {
     const formattedDate = formatDate(new Date(userDate));
     return `
     <div class="posts" id="${i}">
@@ -54,7 +54,7 @@ function newPostHTML(user, i, userNickName, userDate, userAvatar, userLikeicon, 
                             </div>
                         </div>
                     </div>
-                    <div id="posttext${i}"></div>
+                    <div id="">${infotext}</div>
                         <div id="comment${i}"></div>
                             <div class="padding">
                                 <div class="flexContainerMessege">
@@ -106,7 +106,7 @@ function modalFunction(i) {
         <input id="authorInput" placeholder="Author">
         <input id="authorNameInput" placeholder="Author Name">
         <textarea id="posttext" placeholder="Your Text"></textarea>
-        <button onclick="submitUserInfo()">Submit</button>
+        <button onclick="submitUserInfo()">Submit</button><button id="emoji-button">Click Me</button>
     </div>
 </div>
   `

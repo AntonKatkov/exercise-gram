@@ -9,7 +9,7 @@ let userInfos = [
         "commentsicon": "./img/imgicons/chatIcon.svg",
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
-        "posttext": ['das ist hier ein schönes bild findet ihr das auch ? das ist hier ein schönes bild findet ihr das auch  das ist hier ein schönes bild findet ihr das auch das ist hier ein schönes bild findet ihr das auch das ist hier ein schönes bild findet ihr das auch 12312'],        
+        "posttext": 'ein test ist immer schön aber naja',        
         "comments": ['test','was geht abbbbbbbbb',]
     },
     {
@@ -21,7 +21,7 @@ let userInfos = [
         "commentsicon": "./img/imgicons/chatIcon.svg",
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
-        "posttext": [],
+        "posttext": 'wasgehgt',
         "comments": ['schön','was geht bei dir ab krass',]
     },
     {
@@ -33,7 +33,7 @@ let userInfos = [
         "commentsicon": "./img/imgicons/chatIcon.svg",
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
-        "posttext": [],
+        "posttext": '',
         "comments": ['lol was geht',]
     },
     {
@@ -45,7 +45,7 @@ let userInfos = [
         "commentsicon": "./img/imgicons/chatIcon.svg",
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
-        "posttext": [],
+        "posttext": '',
         "comments": ['xxxx','xx',]
     },
     {
@@ -57,7 +57,7 @@ let userInfos = [
         "commentsicon": "./img/imgicons/chatIcon.svg",
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
-        "posttext": [],
+        "posttext": '',
         "comments": []
     },
     

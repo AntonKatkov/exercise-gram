@@ -112,6 +112,9 @@ section {
     height: 56px;
     width: 56px;
     border-radius: 50px;
+    padding: 2px;
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+    box-shadow: 0 0 5px #000;
     background-size: contain;
     background-repeat: no-repeat;
     background-size: cover;
@@ -121,7 +124,6 @@ section {
     display: flex;
     max-width: 630px;
     width: 100%;
-    overflow: scroll;
 }
 
 .newPosts {
@@ -201,7 +203,9 @@ button {
 }
 
 .comentspadding {
-    padding: 5px 0px 5px 0px;
+    padding: 5px 0px 3px 0px;
+    padding-left: 14px;
+    overflow-wrap: break-word;
 }
 
 .onepxline {
