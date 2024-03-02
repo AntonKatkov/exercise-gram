@@ -1,3 +1,4 @@
+let selectedImageSrc = ''; 
 
 function newInfoRender() {
     let content = document.getElementById('infoContent');
@@ -5,9 +6,7 @@ function newInfoRender() {
 
     for (let i = 0; i < Math.min(userInfos.length, 6); i++) {
         let user = userInfos[i];
-        let userNickName = user['author']
-        let userAvatar = user['avatar']
-        content.innerHTML += returnHTML(user, i, userNickName, userAvatar);
+        content.innerHTML += returnHTML(user, i,);
         ;
     }
 }
@@ -19,9 +18,8 @@ function newPostRender() {
     for (let i = 0; i < userInfos.length; i++) {
         let user = userInfos[i];
         let userLikeicon = user.isLiked ? "img/ImgProfiele/herthLike.png" : "./img/imgicons/hearthIcon.svg";
-        postContent.innerHTML += newPostHTML(user,  i, user.posttext, user.author, user.createdAt, user.avatar, userLikeicon, user.commentsicon, user.sendicon, user.saveicon);
-        ;
-        
+        postContent.innerHTML += newPostHTML(user, i, userLikeicon,);
+
         let usercommentsTextLength = document.getElementById(`comment${i}`);
         for (let x = 0; x < user['comments'].length; x++) {
             let comment = user['comments'][x];
@@ -31,16 +29,15 @@ function newPostRender() {
     }
 }
 
-function renderProfile(){
+function renderProfile() {
     let profileContent = document.getElementById('profileContent');
     profileContent.innerHTML = '';
 
     for (let i = 0; i < Math.min(userInfos.length, 5); i++) {
         let user = userInfos[i];
 
-        profileContent.innerHTML += profileHTML(user, i,user.authorName, user.author, user.avatar,);
+        profileContent.innerHTML += profileHTML(user, i,);
     }
-
 }
 
 function Start() {
@@ -61,7 +58,6 @@ function commendAdd(index) {
 function liked(index) {
     // Zugriff auf das Nutzerobjekt
     let user = userInfos[index];
-
     // Umkehren des aktuellen Like-Zustands
     user.isLiked = !user.isLiked;
     // Aktualisieren des Like-Arrays basierend auf dem neuen Zustand
@@ -82,9 +78,7 @@ function liked(index) {
     if (likeButton) {
         likeButton.src = user.isLiked ? "img/ImgProfiele/herthLike.png" : "./img/imgicons/hearthIcon.svg";
     }
-    // Speichern der aktualisierten Informationen
     saveUserInfo();
-    // Rendern der Beiträge neu
     newPostRender();
 }
 
@@ -104,8 +98,6 @@ function formatDate(date) {
     return day + '.' + month + '.' + year; // Format: DD.MM.YYYY
 }
 
-
-
 function CreatePost(i) {
     // Modal dynamisch erstellen oder ein existierendes Modal finden
     let modal = document.getElementById("modal" + i);
@@ -117,17 +109,53 @@ function CreatePost(i) {
         modal.innerHTML = modalFunction(i);
         document.body.appendChild(modal);
     }
-    
     // Modal anzeigen
     modal.style.display = "block";
 }
 
 function closeModal(i) {
-    var modal = document.getElementById("modal" + i);
+    let modal = document.getElementById("modal" + i);
     if (modal) {
         modal.style.display = "none";
     }
 }
+
+
+function deletePost(i) {
+    let delpost = document.getElementById(`post${i}`);
+    if (delpost) {
+        delpost.remove();
+    }
+    if (i > -1) {
+        userInfos.splice(i, 1);
+    }
+    saveUserInfo();
+    newPostRender(); 
+}
+
+function selectImage(selected) {
+    // Pfad-Basis für Bilder
+    let basePath = "./img/imgicons/";
+    // Bildpfade
+    let images = {
+        '1': "hearthIcon.svg",
+        '2': "chatIcon.svg",
+        '3': "saveIcon.svg"
+    };
+
+    // Aktualisieren des ausgewählten Bildpfades
+    selectedImageSrc = basePath + images[selected];
+
+    // Alle Indikatoren verstecken
+    document.querySelectorAll('.selection-indicator').forEach(indicator => {
+        indicator.style.display = 'none';
+    });
+
+    // Nur den Indikator des ausgewählten Bildes anzeigen
+    document.getElementById('indicator' + selected).style.display = 'block';
+}
+
+
 
 
 function submitUserInfo() {
@@ -135,13 +163,11 @@ function submitUserInfo() {
     let authorName = document.getElementById('authorNameInput').value;
     let posttext = document.getElementById('posttext').value;
 
-    let createdAt = new Date(); // Erfasst das aktuelle Datum und die Uhrzeit
-
     let userInfo = {
         "author": author,
         "authorName": authorName,
-        "createdAt": createdAt,
-        "avatar": "./img/ImgProfiele/img-1.png",
+        "createdAt": new Date(),
+        "avatar": selectedImageSrc, 
         "likeicon": "./img/imgicons/hearthIcon.svg",
         "commentsicon": "./img/imgicons/chatIcon.svg",
         "sendicon": "./img/imgicons/sendIcon.svg",
@@ -150,8 +176,9 @@ function submitUserInfo() {
         "comments": [],
         "likes": []
     };
+    
     userInfos.push(userInfo);
-    saveUserInfo()
+    saveUserInfo();
 
     document.getElementById('authorInput').value = '';
     document.getElementById('authorNameInput').value = '';
@@ -161,15 +188,10 @@ function submitUserInfo() {
 }
 
 
-function saveUserInfo() {
-    // Speichere das aktuelle userInfos-Array im localStorage
-    localStorage.setItem('userInfos', JSON.stringify(userInfos));
-}
 
-// Beispiel: Hinzufügen eines neuen Benutzerinfo-Objekts
-function addNewUserInfo(newUserInfo) {
-    userInfos.push(newUserInfo); // Füge das neue Objekt zum Array hinzu
-    saveUserInfo(); // Speichere das aktualisierte Array im localStorage
+
+function saveUserInfo() {
+    localStorage.setItem('userInfos', JSON.stringify(userInfos));
 }
 
 function loadUserInfo() {

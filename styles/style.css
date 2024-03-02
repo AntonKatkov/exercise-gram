@@ -130,7 +130,7 @@ section {
     margin-top: 24px;
     display: flex;
     flex-direction: column-reverse;
-    
+
 }
 
 .posts {
@@ -215,14 +215,14 @@ button {
     border-top: 1px solid #383838;
 }
 
-.myProfile{
+.myProfile {
     display: flex;
     padding-left: 64px;
     flex-direction: column;
     width: 383px;
 }
 
-.buttonProfilelist{
+.buttonProfilelist {
     display: flex;
     background-color: transparent;
     border: none;
@@ -232,70 +232,89 @@ button {
 
 }
 
-.dFlex{
+.dFlex {
     display: flex;
     align-items: center;
-    gap: 15px; 
+    gap: 15px;
     justify-content: space-between;
 }
 
-.dflexC{
+.dflexC {
     display: flex;
     flex-direction: column;
 }
 
-.gap{
+.gap {
     gap: 15px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
+    /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-  }
-  
-  /* The Close Button */
-  .close {
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+}
+
+.selection-indicator {
+    display: none; /* Standardmäßig nicht sichtbar */
+    text-align: center;
+}
+
+.selection-indicator::after {
+    content: '●'; /* Ein einfacher Punkt als Indikator */
+    font-size: 24px; /* Größe des Punkts */
+    color: green; /* Farbe des Auswahlindikators */
+}
+
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}

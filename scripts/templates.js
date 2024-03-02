@@ -1,14 +1,14 @@
-function returnHTML(user, i, userName, userAvatar) {
+function returnHTML(user, i,) {
     return `
           <ul>
             <li>
                 <div>
                     <button class="mMarginList buttonlist">
                     <div class="sMarginList" role="button">
-                    <img class="avatarImg" id="myImg${user}" src="${userAvatar}" alt="imgNr ${user}">
+                    <img class="avatarImg" id="myImg${user}" src="${user.avatar}" alt="imgNr ${user}">
                     </div>
                             <div>
-                                <span>${userName}</span>
+                                <span>${user.author}</span>
                             <div>
                     </button>
                 </div>
@@ -18,21 +18,22 @@ function returnHTML(user, i, userName, userAvatar) {
 
 
 
-function newPostHTML(user, i, infotext, userNickName, userDate, userAvatar, userLikeicon, userCommentsIcon, userSendicon, userSaveicon,) {
-    let formattedDate = formatDate(new Date(userDate));
+function newPostHTML(user, i,  userLikeicon,) {
+    let formattedDate = formatDate(new Date(user.createdAt));
     return `
-    <div class="posts" id="${i}">
+    <div class="posts" id="post${i}">
         <div>
             <div>
                 <article>
                     <div>
                         <div>
+                        <span class="close" onclick="deletePost(${i})">&times;</span>
                         <div class="displayFlex profielePadding">
-                        <img class="avatarImg" id="${user}" src="${userAvatar}" alt="imgNr ${user}">
-                        <span>${userNickName}</span><span>*</span><span>${formattedDate}</span>
+                        <img class="avatarImg" id="${user}" src="${user.avatar}" alt="imgNr ${user}">
+                        <span>${user.author}</span><span>*</span><span>${formattedDate}</span>
                     </div>
                             <div>
-                            <img class="view-Post" id="myImg${user}" src="${userAvatar}" alt="imgNr ${user}">
+                            <img class="view-Post" id="myImg${user}" src="${user.avatar}" alt="imgNr ${user}">
                             </div>
                     </div>
                         <div class="iconspostbox">
@@ -41,20 +42,20 @@ function newPostHTML(user, i, infotext, userNickName, userDate, userAvatar, user
                                     <img class="iconButtonSize" id="Like${i}" onclick="liked(${i})" src="${userLikeicon}" alt="imgNr${user}">
                                 </div>
                                 <div>
-                                    <img class="iconButtonSize" id="myImg" src="${userCommentsIcon}" alt="imgNr${user}">
+                                    <img class="iconButtonSize" id="myImg" src="${user.commentsicon}" alt="imgNr${user}">
                                 </div>
                                 <div>
-                                    <img class="iconButtonSize" id="myImg" src="${userSendicon}" alt="imgNr${user}">
+                                    <img class="iconButtonSize" id="myImg" src="${user.sendicon}" alt="imgNr${user}">
                                 </div>
                             </div>
                             <div>
                                 <div>
-                                    <img class="iconButtonSize" id="myImg" src="${userSaveicon}" alt="imgNr${user}">
+                                    <img class="iconButtonSize" id="myImg" src="${user.saveicon}" alt="imgNr${user}">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div id="">${infotext}</div>
+                    <div id="">${user.posttext}</div>
                         <div id="comment${i}"></div>
                             <div class="padding">
                                 <div class="flexContainerMessege">
@@ -71,7 +72,7 @@ function newPostHTML(user, i, infotext, userNickName, userDate, userAvatar, user
     `;
 }
 
-function profileHTML(user, i, userName, userNickName, userAvatar,) {
+function profileHTML(user, i,) {
     return `
     <div>
         <div>
@@ -79,10 +80,10 @@ function profileHTML(user, i, userName, userNickName, userAvatar,) {
                 <div class="dFlex">
                     <div class="sMarginList dFlex">
                     
-                    <a class="externlink" href=""><img role="button" class="avatarImg buttonProfilelist" id="myImg${user}" src="${userAvatar}" alt="imgNr ${user}"></a>
+                    <a class="externlink" href=""><img role="button" class="avatarImg buttonProfilelist" id="myImg${user}" src="${user.avatar}" alt="imgNr ${user}"></a>
                         <div class="dflexC">
-                            <span role="button">${userNickName}</span>
-                            <span>${userName}</span>
+                            <span role="button">${user.author}</span>
+                            <span>${user.authorName}</span>
                         </div>
                     </div>
                     <div>
@@ -106,8 +107,24 @@ function modalFunction(i) {
         <input id="authorInput" placeholder="Author">
         <input id="authorNameInput" placeholder="Author Name">
         <textarea id="posttext" placeholder="Your Text"></textarea>
-        <button onclick="submitUserInfo()">Submit</button><button id="emoji-button">Click Me</button>
-    </div>
-</div>
+
+        background images to choose from
+        <div style="display: flex;">
+            <div class="image-selection">
+                <img class="iconButtonSize" src="./img/imgicons/hearthIcon.svg" onclick="selectImage('1')" alt="Image 1">
+                <div class="selection-indicator" id="indicator1"></div>
+            </div>
+            <div class="image-selection">
+                <img class="iconButtonSize" src="./img/imgicons/chatIcon.svg" onclick="selectImage('2')" alt="Image 2">
+                <div class="selection-indicator" id="indicator2"></div>
+            </div>
+            <div class="image-selection">
+                <img class="iconButtonSize" src="./img/imgicons/saveIcon.svg" onclick="selectImage('3')" alt="Image 3">
+                <div class="selection-indicator" id="indicator3"></div>
+            </div>
+
+        </div>
+<button onclick="submitUserInfo(${i})">Submit</button><button id="emoji-button">Click Me</button>
+
   `
   }
