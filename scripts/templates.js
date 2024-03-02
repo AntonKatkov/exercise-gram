@@ -19,7 +19,7 @@ function returnHTML(user, i, userName, userAvatar) {
 
 
 function newPostHTML(user, i, infotext, userNickName, userDate, userAvatar, userLikeicon, userCommentsIcon, userSendicon, userSaveicon,) {
-    const formattedDate = formatDate(new Date(userDate));
+    let formattedDate = formatDate(new Date(userDate));
     return `
     <div class="posts" id="${i}">
         <div>
@@ -38,7 +38,7 @@ function newPostHTML(user, i, infotext, userNickName, userDate, userAvatar, user
                         <div class="iconspostbox">
                             <div class="iconsbuttons">
                                 <div>
-                                    <img class="iconButtonSize" id="myImg" src="${userLikeicon}" alt="imgNr${user}">
+                                    <img class="iconButtonSize" id="Like${i}" onclick="liked(${i})" src="${userLikeicon}" alt="imgNr${user}">
                                 </div>
                                 <div>
                                     <img class="iconButtonSize" id="myImg" src="${userCommentsIcon}" alt="imgNr${user}">

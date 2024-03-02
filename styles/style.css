@@ -159,6 +159,7 @@ section {
     display: flex;
     justify-content: space-between;
     margin: 8px 0px;
+    padding: 0px 5px;
 }
 
 .iconsbuttons {

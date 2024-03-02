@@ -10,7 +10,8 @@ let userInfos = [
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
         "posttext": 'ein test ist immer schön aber naja',        
-        "comments": ['test','was geht abbbbbbbbb',]
+        "comments": ['test','was geht abbbbbbbbb',],
+        "likes": []
     },
     {
         "author": "Strannik2",
@@ -22,7 +23,8 @@ let userInfos = [
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
         "posttext": 'wasgehgt',
-        "comments": ['schön','was geht bei dir ab krass',]
+        "comments": ['schön','was geht bei dir ab krass',],
+        "likes": []
     },
     {
         "author": "Strannik3",
@@ -34,7 +36,8 @@ let userInfos = [
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
         "posttext": '',
-        "comments": ['lol was geht',]
+        "comments": ['lol was geht',],
+        "likes": []
     },
     {
         "author": "Strannik4",
@@ -46,7 +49,8 @@ let userInfos = [
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
         "posttext": '',
-        "comments": ['xxxx','xx',]
+        "comments": ['xxxx','xx',],
+        "likes": []
     },
     {
         "author": "Strannik5",
@@ -58,7 +62,8 @@ let userInfos = [
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
         "posttext": '',
-        "comments": []
+        "comments": [],
+        "likes": []
     },
     
 ];

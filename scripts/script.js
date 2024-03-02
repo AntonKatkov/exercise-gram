@@ -18,21 +18,13 @@ function newPostRender() {
 
     for (let i = 0; i < userInfos.length; i++) {
         let user = userInfos[i];
-        let userNickName = user['author']
-        let userDate= user['createdAt']
-        let userAvatar = user['avatar']
-        let userLikeicon = user['likeicon']
-        let userCommentsIcon = user['commentsicon']
-        let userSendicon = user['sendicon']
-        let userSaveicon = user['saveicon']
-        let infotext = user['posttext']
-        postContent.innerHTML += newPostHTML(user, i, infotext, userNickName, userDate, userAvatar, userLikeicon, userCommentsIcon, userSendicon, userSaveicon,);
+        let userLikeicon = user.isLiked ? "img/ImgProfiele/herthLike.png" : "./img/imgicons/hearthIcon.svg";
+        postContent.innerHTML += newPostHTML(user,  i, user.posttext, user.author, user.createdAt, user.avatar, userLikeicon, user.commentsicon, user.sendicon, user.saveicon);
         ;
-
-
+        
         let usercommentsTextLength = document.getElementById(`comment${i}`);
         for (let x = 0; x < user['comments'].length; x++) {
-            const comment = user['comments'][x];
+            let comment = user['comments'][x];
             usercommentsTextLength.innerHTML += `<div class="comentspadding"> ${comment} </div>`
         }
 
@@ -45,23 +37,18 @@ function renderProfile(){
 
     for (let i = 0; i < Math.min(userInfos.length, 5); i++) {
         let user = userInfos[i];
-        let userNickName = user['author']
-        let userName =user['authorName']
-        let userAvatar = user['avatar']
-    
 
-        profileContent.innerHTML += profileHTML(user, i,userName, userNickName, userAvatar,);
+        profileContent.innerHTML += profileHTML(user, i,user.authorName, user.author, user.avatar,);
     }
 
 }
 
-
 function Start() {
     loadUserInfo()
+    likerender()
     newInfoRender()
     newPostRender()
     renderProfile()
-
 }
 
 function commendAdd(index) {
@@ -71,20 +58,49 @@ function commendAdd(index) {
     newPostRender()
 }
 
+function liked(index) {
+    // Zugriff auf das Nutzerobjekt
+    let user = userInfos[index];
 
+    // Umkehren des aktuellen Like-Zustands
+    user.isLiked = !user.isLiked;
+    // Aktualisieren des Like-Arrays basierend auf dem neuen Zustand
+    if (user.isLiked) {
+        // Stellen Sie sicher, dass 'true' nur einmal hinzugefügt wird
+        if (!user.likes.includes('true')) {
+            user.likes.push('true');
+        }
+    } else {
+        // Entfernen von 'true', falls der Beitrag nicht mehr geliked ist
+        let trueIndex = user.likes.indexOf('true');
+        if (trueIndex > -1) {
+            user.likes.splice(trueIndex, 1);
+        }
+    }
+    // Aktualisieren des Bildpfads für das Like-Icon basierend auf dem Zustand
+    let likeButton = document.getElementById(`Like${index}`);
+    if (likeButton) {
+        likeButton.src = user.isLiked ? "img/ImgProfiele/herthLike.png" : "./img/imgicons/hearthIcon.svg";
+    }
+    // Speichern der aktualisierten Informationen
+    saveUserInfo();
+    // Rendern der Beiträge neu
+    newPostRender();
+}
 
+function likerender() {
+    userInfos.forEach(user => {
+        user.isLiked = user.likes.includes('true');
+    });
+}
 
 function formatDate(date) {
-
     let day = date.getDate();
     let month = date.getMonth() + 1; // Da Monate von 0 beginnen, addieren wir 1
     let year = date.getFullYear();
-
     // Führende Null hinzufügen, wenn Tag oder Monat < 10
     day = day < 10 ? '0' + day : day;
     month = month < 10 ? '0' + month : month;
-
-
     return day + '.' + month + '.' + year; // Format: DD.MM.YYYY
 }
 
@@ -92,7 +108,7 @@ function formatDate(date) {
 
 function CreatePost(i) {
     // Modal dynamisch erstellen oder ein existierendes Modal finden
-    var modal = document.getElementById("modal" + i);
+    let modal = document.getElementById("modal" + i);
     if (!modal) {
         // Modal existiert nicht, also erstelle es dynamisch (optional)
         modal = document.createElement("div");
@@ -131,7 +147,8 @@ function submitUserInfo() {
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
         "posttext": posttext,
-        "comments": []
+        "comments": [],
+        "likes": []
     };
     userInfos.push(userInfo);
     saveUserInfo()
@@ -165,17 +182,3 @@ function loadUserInfo() {
 }
 
 
-
-function addDiv(parentId) {
-    const parent = document.getElementById(parentId);
-    const existingDivs = parent.querySelectorAll('div');
-
-    // Prüfe, ob die maximale Anzahl erreicht ist
-    if (existingDivs.length < 5) {
-        const newDiv = document.createElement('div');
-        newDiv.textContent = `Element ${existingDivs.length + 1}`;
-        parent.appendChild(newDiv);
-    } else {
-        console.log('Maximale Anzahl von 5 divs erreicht.');
-    }
-}
