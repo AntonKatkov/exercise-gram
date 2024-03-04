@@ -1,3 +1,7 @@
+* {
+    margin: 0px;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -5,31 +9,6 @@ a {
 
 body {
     margin: 0;
-}
-
-.navigationContainer {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-    height: 100%;
-    justify-content: space-between;
-}
-
-.navigation {
-    align-content: space-between;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 24px 0;
-    top: 0px;
-    width: 256px;
-    left: 0;
-    bottom: 0;
-}
-
-.navigation nav {
-    width: 100%;
 }
 
 .navigation Img {
@@ -44,33 +23,8 @@ body {
     align-items: center;
 }
 
-.button {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    background: white;
-    border-radius: 5px;
-    padding: 8px 12px 8px 24px;
-    cursor: pointer;
-    align-items: center;
-    margin-left: 10px;
-    margin-right: 10px;
-    transition: background-color 1s ease-out 10ms
-}
-
-.button:hover {
-    margin-left: 15px;
-    margin-right: 15px;
-    border-radius: 5px;
-    padding: 8px 12px 8px 24px;
-    background: rgb(120, 194, 231);
-
-}
-
 section {
-    width: calc(100% - 335px);
-    margin-left: 335px;
-    padding-top: 24px;
+    width: 100%;
 }
 
 .mainContent {
@@ -78,6 +32,7 @@ section {
     display: flex;
     justify-content: center;
     padding-left: 24px;
+    padding-left: 335px;
 }
 
 .mainContentInputs {
@@ -229,7 +184,6 @@ button {
     cursor: pointer;
     align-items: center;
     gap: 15px;
-
 }
 
 .dFlex {
@@ -296,25 +250,78 @@ button {
 }
 
 .selection-indicator {
-    display: none; /* Standardmäßig nicht sichtbar */
+    display: none;
+    /* Standardmäßig nicht sichtbar */
     text-align: center;
 }
 
 .selection-indicator::after {
-    content: '●'; /* Ein einfacher Punkt als Indikator */
-    font-size: 24px; /* Größe des Punkts */
-    color: green; /* Farbe des Auswahlindikators */
+    content: '●';
+    /* Ein einfacher Punkt als Indikator */
+    font-size: 24px;
+    /* Größe des Punkts */
+    color: green;
+    /* Farbe des Auswahlindikators */
 }
 
-
 textarea {
-  width: 100%;
-  height: 150px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  font-size: 16px;
-  resize: none;
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
+.sidenav {
+    height: 95vh;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 34px;
+    padding-bottom: 34px;
+    width: 335px;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-direction: column;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 95vh) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
 }

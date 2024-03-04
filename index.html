@@ -17,26 +17,27 @@
 </head>
 
 <body onload="Start()">
-    <div class="navigationContainer">
+    <div id="mySidenav" class="sidenav">
         <div class="navigation">
             <nav>
-                <a href="#" id="" class="button" onclick="" target="_self">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#" id="" class="" onclick="" target="_self">
                     <img src="" alt="bild"> Home
                 </a>
-                <a href="#" id="" class="button" onclick="CreatePost()" target="_self">
+                <a href="#" id="" class="" onclick="CreatePost()" target="_self">
                     <img src="" alt="bild"> Create
                 </a>
-                <a href="#" id="" class="button" onclick="" target="_self">
+                <a href="#" id="" class="" onclick="" target="_self">
                     <img src="" alt="bild"> Nam:
                 </a>
-                <a href="#" id="" class="button" onclick="" target="_self">
+                <a href="#" id="" class="" onclick="" target="_self">
                     <img src="" alt="bild"> Nam:
                 </a>
             </nav>
         </div>
         <div class="navigation">
             <nav>
-                <a href="#" class="button">
+                <a href="#" class="">
                     <img src="" alt="bild"><span>Settings
                     </span>
                 </a>
@@ -44,8 +45,9 @@
         </div>
     </div>
     <div>
-        <section>
-            <main class="mainContent">
+        <section id="mainS">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+            <main id="mainC" class="mainContent">
                 <div class="mainContentInputs">
                     <div class="newInfo" id="infoContent">
                     </div>

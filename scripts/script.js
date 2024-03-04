@@ -131,6 +131,7 @@ function deletePost(i) {
     }
     saveUserInfo();
     newPostRender(); 
+    newInfoRender()
 }
 
 function selectImage(selected) {
@@ -204,3 +205,12 @@ function loadUserInfo() {
 }
 
 
+function openNav() {
+    document.getElementById("mySidenav").style.width = "335px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+
+  
