@@ -126,6 +126,14 @@ section {
     height: 24px;
     width: 24px;
 }
+.iconButtonSizeCreatePost {
+    background: no-repeat center;
+    background-size: cover;
+    cursor: pointer;
+    width: 300px;
+    height: 200px;
+}
+
 
 .iconButtonSize:hover {
     filter: opacity(0.5);
@@ -249,19 +257,9 @@ button {
     cursor: pointer;
 }
 
-.selection-indicator {
-    display: none;
-    /* Standardmäßig nicht sichtbar */
-    text-align: center;
-}
-
-.selection-indicator::after {
-    content: '●';
-    /* Ein einfacher Punkt als Indikator */
-    font-size: 24px;
-    /* Größe des Punkts */
-    color: green;
-    /* Farbe des Auswahlindikators */
+.image-selection{
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 textarea {
@@ -325,3 +323,69 @@ textarea {
         font-size: 18px;
     }
 }
+
+.sidenav .dark-mode-toggle,
+.sidenav .more-menu {
+  padding: 8px 32px; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+.sidenav .dark-mode-toggle span,
+.sidenav .more-menu span {
+  color: #818181;
+}
+
+/* Schalter-Styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+

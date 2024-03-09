@@ -1,4 +1,4 @@
-let selectedImageSrc = ''; 
+let selectedImageSrc = '';
 
 function newInfoRender() {
     let content = document.getElementById('infoContent');
@@ -120,7 +120,6 @@ function closeModal(i) {
     }
 }
 
-
 function deletePost(i) {
     let delpost = document.getElementById(`post${i}`);
     if (delpost) {
@@ -130,45 +129,59 @@ function deletePost(i) {
         userInfos.splice(i, 1);
     }
     saveUserInfo();
-    newPostRender(); 
+    newPostRender();
     newInfoRender()
 }
 
 function selectImage(selected) {
     // Pfad-Basis für Bilder
-    let basePath = "./img/imgicons/";
+    let basePath = "./img/ImgProfiele/";
     // Bildpfade
     let images = {
-        '1': "hearthIcon.svg",
-        '2': "chatIcon.svg",
-        '3': "saveIcon.svg"
+        '1': "ninja-7701126_1280.jpg",
+        '2': "science-fiction-1424446_1280.jpg",
+        '3': "mind-544404_1280.png",
     };
 
     // Aktualisieren des ausgewählten Bildpfades
     selectedImageSrc = basePath + images[selected];
+}
 
-    // Alle Indikatoren verstecken
-    document.querySelectorAll('.selection-indicator').forEach(indicator => {
-        indicator.style.display = 'none';
-    });
-
-    // Nur den Indikator des ausgewählten Bildes anzeigen
-    document.getElementById('indicator' + selected).style.display = 'block';
+function emptytest(str) {
+    // Prüfen, ob der übergebene String leer ist
+    if (typeof str === 'string' && str.trim().length === 0) {
+        alert('nickname or name are empty');
+        return true; // Der String ist leer
+    }
+    return false; // Der String ist nicht leer
 }
 
 
 
-
 function submitUserInfo() {
-    let author = document.getElementById('authorInput').value;
-    let authorName = document.getElementById('authorNameInput').value;
-    let posttext = document.getElementById('posttext').value;
+    let author = document.getElementById('authorInput')
+    let authorName = document.getElementById('authorNameInput')
+    let posttext = document.getElementById('posttext')
+
+    if (!emptytest(author.value && authorName.value)) {
+
+        saveextra(author.value, authorName.value, posttext.value)
+        let ele = document.getElementsByName("Choose");
+        for (let i = 0; i < ele.length; i++)
+            ele[i].checked = false;
+
+    closeModal();
+    Start();
+    }
+}
+
+function saveextra(author,authorName,posttext) {
 
     let userInfo = {
         "author": author,
         "authorName": authorName,
         "createdAt": new Date(),
-        "avatar": selectedImageSrc, 
+        "avatar": selectedImageSrc,
         "likeicon": "./img/imgicons/hearthIcon.svg",
         "commentsicon": "./img/imgicons/chatIcon.svg",
         "sendicon": "./img/imgicons/sendIcon.svg",
@@ -177,19 +190,14 @@ function submitUserInfo() {
         "comments": [],
         "likes": []
     };
-    
+
     userInfos.push(userInfo);
     saveUserInfo();
 
     document.getElementById('authorInput').value = '';
     document.getElementById('authorNameInput').value = '';
     document.getElementById('posttext').value = '';
-    closeModal();
-    Start();
 }
-
-
-
 
 function saveUserInfo() {
     localStorage.setItem('userInfos', JSON.stringify(userInfos));
@@ -204,13 +212,11 @@ function loadUserInfo() {
     }
 }
 
-
 function openNav() {
     document.getElementById("mySidenav").style.width = "335px";
-  }
-  
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }
+}
 
-  
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+

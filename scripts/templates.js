@@ -16,8 +16,6 @@ function returnHTML(user, i,) {
         </ul>`;
 }
 
-
-
 function newPostHTML(user, i,  userLikeicon,) {
     let formattedDate = formatDate(new Date(user.createdAt));
     return `
@@ -104,27 +102,38 @@ function modalFunction(i) {
     <div class="modal-content">  
     <span class="close" onclick="closeModal(${i})">&times;</span>
     <div class="dflexC gap">
-        <input id="authorInput" placeholder="Author">
-        <input id="authorNameInput" placeholder="Author Name">
+        <input id="authorInput" placeholder="Nickname">
+        <input id="authorNameInput" placeholder="name">
         <textarea id="posttext" placeholder="Your Text"></textarea>
+            <span style=" text-align: center; font-weight: bold; font-size: xx-large;"> 
+                        background images to choose from 
+            </span>
+        
+        <div style="display: flex; gap: 15px; justify-content: center;">
 
-        background images to choose from
-        <div style="display: flex;">
             <div class="image-selection">
-                <img class="iconButtonSize" src="./img/imgicons/hearthIcon.svg" onclick="selectImage('1')" alt="Image 1">
-                <div class="selection-indicator" id="indicator1"></div>
+                <input type="radio" id="indicator1" name="Choose" src="./img/ImgProfiele/ninja-7701126_1280.jpg" onclick="selectImage('1')">
+                <label for="indicator1">
+                    <img class="iconButtonSizeCreatePost" src="./img/ImgProfiele/ninja-7701126_1280.jpg" onclick="selectImage('1')" alt="Image 1">
+                </label>
             </div>
+
             <div class="image-selection">
-                <img class="iconButtonSize" src="./img/imgicons/chatIcon.svg" onclick="selectImage('2')" alt="Image 2">
-                <div class="selection-indicator" id="indicator2"></div>
+                <input type="radio" id="indicator2" name="Choose" src="./img/ImgProfiele/science-fiction-1424446_1280.jpg" onclick="selectImage('2')">
+                <label for="indicator2">
+                    <img class="iconButtonSizeCreatePost" src="./img/ImgProfiele/science-fiction-1424446_1280.jpg" onclick="selectImage('2')" alt="Image 2">
+                </label>
             </div>
+
             <div class="image-selection">
-                <img class="iconButtonSize" src="./img/imgicons/saveIcon.svg" onclick="selectImage('3')" alt="Image 3">
-                <div class="selection-indicator" id="indicator3"></div>
+                <input type="radio" id="indicator3" name="Choose" src="./img/ImgProfiele/mind-544404_1280.png" onclick="selectImage('3')">
+                <label for="indicator3">
+                    <img class="iconButtonSizeCreatePost" src="./img/ImgProfiele/mind-544404_1280.png" onclick="selectImage('3')" alt="Image 3">
+                </label>
             </div>
 
         </div>
-<button onclick="submitUserInfo(${i})">Submit</button><button id="emoji-button">Click Me</button>
+<button onclick="submitUserInfo(${i})">Submit</button>
 
   `
   }
