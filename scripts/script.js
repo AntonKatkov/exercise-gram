@@ -1,5 +1,12 @@
 let selectedImageSrc = '';
 
+document.addEventListener('input', function (event) {
+    if (event.target.classList.contains('inputfield')) {
+        autoAdjustHeight(event.target);
+    }
+});
+
+
 function newInfoRender() {
     let content = document.getElementById('infoContent');
     content.innerHTML = '';
@@ -23,10 +30,15 @@ function newPostRender() {
         let usercommentsTextLength = document.getElementById(`comment${i}`);
         for (let x = 0; x < user['comments'].length; x++) {
             let comment = user['comments'][x];
-            usercommentsTextLength.innerHTML += `<div class="comentspadding"> ${comment} </div>`
+            usercommentsTextLength.innerHTML += `
+                <div id="comment${i}_${x}" class="comentspadding">
+                <div class="User">${user.author}</div>
+                    ${comment}
+                    <span class="delete-comment" onclick="deleteComment(${i}, ${x})">&times;</span>
+                </div>`;
         }
-
     }
+
 }
 
 function renderProfile() {
@@ -55,6 +67,18 @@ function commendAdd(index) {
     newPostRender()
 }
 
+function autoAdjustHeight(textarea) {
+    let maxHeight = 100; // Maximalhöhe in Pixel, bevor Scrollbar erscheint
+    textarea.style.height = 'auto'; // Setzt die Höhe zurück, um die neue Größe zu berechnen
+    if (textarea.scrollHeight > maxHeight) {
+        textarea.style.overflowY = 'auto'; // Fügt Scrollbar hinzu
+        textarea.style.height = maxHeight + 'px'; // Setzt Höhe auf Maximalhöhe
+    } else {
+        textarea.style.overflowY = 'hidden'; // Verbirgt Scrollbar
+        textarea.style.height = textarea.scrollHeight + 'px'; // Passt Höhe an den Inhalt an
+    }
+}
+
 function liked(index) {
     // Zugriff auf das Nutzerobjekt
     let user = userInfos[index];
@@ -78,9 +102,26 @@ function liked(index) {
     if (likeButton) {
         likeButton.src = user.isLiked ? "img/ImgProfiele/herthLike.png" : "./img/imgicons/hearthIcon.svg";
     }
+    updateLikeCount(index);
     saveUserInfo();
     newPostRender();
 }
+
+
+function updateLikeCount(index) {
+    let user = userInfos[index];
+    let likeCountElement = document.getElementById(`like-count-${index}`);
+    if (likeCountElement) {
+        if (user.likes.length > 0) {
+            likeCountElement.textContent = user.likes.length;
+            likeCountElement.style.display = 'block'; // Like-Zähler anzeigen, wenn Likes vorhanden sind
+        } else {
+            likeCountElement.style.display = 'none'; // Like-Zähler ausblenden, wenn keine Likes vorhanden sind
+        }
+    }
+}
+
+
 
 function likerender() {
     userInfos.forEach(user => {
@@ -170,12 +211,12 @@ function submitUserInfo() {
         for (let i = 0; i < ele.length; i++)
             ele[i].checked = false;
 
-    closeModal();
-    Start();
+        closeModal();
+        Start();
     }
 }
 
-function saveextra(author,authorName,posttext) {
+function saveextra(author, authorName, posttext) {
 
     let userInfo = {
         "author": author,
@@ -220,3 +261,10 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
+
+
+function deleteComment(postIndex, commentIndex) {
+    userInfos[postIndex]['comments'].splice(commentIndex, 1);
+    saveUserInfo();
+    newPostRender();
+}

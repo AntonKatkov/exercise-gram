@@ -16,7 +16,7 @@ function returnHTML(user, i,) {
         </ul>`;
 }
 
-function newPostHTML(user, i,  userLikeicon,) {
+function newPostHTML(user, i, userLikeicon,) {
     let formattedDate = formatDate(new Date(user.createdAt));
     return `
     <div class="posts" id="post${i}">
@@ -36,9 +36,11 @@ function newPostHTML(user, i,  userLikeicon,) {
                     </div>
                         <div class="iconspostbox">
                             <div class="iconsbuttons">
-                                <div>
+                                <div style="display:Flex; flex-direction: column;">
                                     <img class="iconButtonSize" id="Like${i}" onclick="liked(${i})" src="${userLikeicon}" alt="imgNr${user}">
+                                    ${user.likes.length > 0 ? `<div class="likeCount" id="like-count-${i}">${user.likes.length}</div>` : ''}
                                 </div>
+
                                 <div>
                                     <img class="iconButtonSize" id="myImg" src="${user.commentsicon}" alt="imgNr${user}">
                                 </div>
@@ -57,8 +59,8 @@ function newPostHTML(user, i,  userLikeicon,) {
                         <div id="comment${i}"></div>
                             <div class="padding">
                                 <div class="flexContainerMessege">
-                                    <input id="input${i}" class="inputfield" type="text" placeholder="Add as comment....">
-                                    <button onclick="commendAdd(${i})">Post</button>
+                                <textarea id="input${i}" class="inputfield" placeholder="Add as comment...." rows="1"></textarea>
+                                    <button class="flexContainerMessege " onclick="commendAdd(${i})">Post</button>
                                 </div>
                             </div>
                         </div>
@@ -68,6 +70,7 @@ function newPostHTML(user, i,  userLikeicon,) {
         </div>
     </div>
     `;
+
 }
 
 function profileHTML(user, i,) {
@@ -85,7 +88,7 @@ function profileHTML(user, i,) {
                         </div>
                     </div>
                     <div>
-                        Follow
+                    <a style="color:Blue;" href="#">Follow</a>
                     </div>
                 </div>
             </div>
@@ -102,9 +105,9 @@ function modalFunction(i) {
     <div class="modal-content">  
     <span class="close" onclick="closeModal(${i})">&times;</span>
     <div class="dflexC gap">
-        <input id="authorInput" placeholder="Nickname">
-        <input id="authorNameInput" placeholder="name">
-        <textarea id="posttext" placeholder="Your Text"></textarea>
+        <input class="inputModal" id="authorInput" placeholder=" Your Nickname">
+        <input class="inputModal" id="authorNameInput" placeholder="Your Name">
+        <textarea id="posttext" placeholder="Your Text Description"></textarea>
             <span style=" text-align: center; font-weight: bold; font-size: xx-large;"> 
                         background images to choose from 
             </span>
@@ -136,4 +139,4 @@ function modalFunction(i) {
 <button onclick="submitUserInfo(${i})">Submit</button>
 
   `
-  }
+}

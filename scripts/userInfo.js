@@ -50,7 +50,7 @@ let userInfos = [
         "saveicon": "./img/imgicons/saveIcon.svg",
         "posttext": '',
         "comments": ['xxxx','xx',],
-        "likes": []
+        "likes": ['true','ture','true','ture','true','ture','true','ture',]
     },
     {
         "author": "Strannik5",
@@ -67,3 +67,4 @@ let userInfos = [
     },
     
 ];
+
