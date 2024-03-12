@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="./styles/footer.css">
     <script src="./scripts/userInfo.js"></script>
     <script src="./scripts/templates.js"></script>
+    <script src="./scripts/darkmode.js"></script>
     <script src="./scripts/script.js"></script>
+
+
 
 
 
@@ -18,9 +21,8 @@
 
 <body onload="Start()">
     <div id="mySidenav" class="sidenav">
-        <div class="navigation">
-            <nav>
-                <a href="javascript:void(0)" class="closebtn" onclick=""></a>
+        <div>
+            <nav class="navigation">
                 <a href="#" id="" class="" onclick="" target="_self">
                     <img src="" alt="bild"> Home
                 </a>
@@ -41,16 +43,17 @@
                 <div class="dark-mode-toggle">
                     <span>Dark mode</span>
                     <label class="switch">
-                        <input type="checkbox">
+                        <input type="checkbox" id="darkModeSwitch">
                         <span class="slider round"></span>
                     </label>
                 </div>
-            </nav>
+            </nav >
         </div>
     </div>
+    <div id="verticalLine"></div>
+
     <div>
         <section id="mainS">
-            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
             <main id="mainC" class="mainContent">
                 <div class="mainContentInputs">
                     <div class="newInfo" id="infoContent">

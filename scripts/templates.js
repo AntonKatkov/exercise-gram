@@ -27,7 +27,7 @@ function newPostHTML(user, i, userLikeicon,) {
                         <div>
                         <span class="close" onclick="deletePost(${i})">&times;</span>
                         <div class="displayFlex profielePadding">
-                        <img class="avatarImg" id="${user}" src="${user.avatar}" alt="imgNr ${user}">
+                        <img  class="avatarImg" id="${user}" src="${user.avatar}" alt="imgNr ${user}">
                         <span>${user.author}</span><span>*</span><span>${formattedDate}</span>
                     </div>
                             <div>
@@ -42,7 +42,7 @@ function newPostHTML(user, i, userLikeicon,) {
                                 </div>
 
                                 <div>
-                                    <img class="iconButtonSize" id="myImg" src="${user.commentsicon}" alt="imgNr${user}">
+                                    <img onclick="openFullscreen()" class="iconButtonSize" id="${user}" src="${user.commentsicon}" alt="imgNr${user.avatar}">
                                 </div>
                                 <div>
                                     <img class="iconButtonSize" id="myImg" src="${user.sendicon}" alt="imgNr${user}">
@@ -71,6 +71,14 @@ function newPostHTML(user, i, userLikeicon,) {
     </div>
     `;
 
+}
+function Usercomments(user, i, x, comment) {
+    return `
+<div id="comment${i}_${x}" class="comentspadding">
+     <div class="User">${user.author}</div>
+        ${comment}
+        <span class="delete-comment" onclick="deleteComment(${i}, ${x})">&times;</span>
+</div>`;
 }
 
 function profileHTML(user, i,) {
@@ -139,4 +147,19 @@ function modalFunction(i) {
 <button onclick="submitUserInfo(${i})">Submit</button>
 
   `
+}
+
+
+function modalPostIMG(user, i, x) {
+    return `
+    <div class="modalx-content">  
+    <span class="close" onclick="closeModal(${x})">&times;</span>
+    <div>
+    <img class="iconButtonSize" id="${user}" src="${user.avatar}" alt="imgNr${i}">
+    </div>
+    
+    </div>
+
+
+`
 }
