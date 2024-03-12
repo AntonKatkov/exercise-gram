@@ -101,9 +101,8 @@
             updateLikeCount(index);
             saveUserInfo();
             newPostRender();
-        }   
+        }  
 
-                
         function updateLikeCount(index) {
             let user = userInfos[index];
             let likeCountElement = document.getElementById(`like-count-${index}`);
@@ -151,7 +150,6 @@
             modal.style.display = "block";
         }
 
-
         function openFullscreen(x) {
             // Modal dynamisch erstellen oder ein existierendes Modal finden
             let modal = document.getElementById("modalx" + x);
@@ -166,9 +164,7 @@
                     modal.className = "modalx";
                     modal.innerHTML = modalPostIMG(user, i);
                     document.body.appendChild(modal);
-                    for (let i = 0; i < userInfos.length; i++) {
-                        let user = userInfos[i];
-                    }
+                    
                 }
             }
             // Modal anzeigen
@@ -254,6 +250,7 @@
                 "sendicon": "./img/imgicons/sendIcon.svg",
                 "saveicon": "./img/imgicons/saveIcon.svg",
                 "posttext": posttext,
+                "isLiked" : "false",
                 "comments": [],
                 "likes": []
             };

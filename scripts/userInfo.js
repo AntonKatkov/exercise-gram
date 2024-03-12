@@ -9,9 +9,10 @@ let userInfos = [
         "commentsicon": "./img/imgicons/chatIcon.svg",
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
-        "posttext": 'ein test ist immer schön aber naja',        
+        "posttext": 'ein test ist immer schön aber naja',  
+        "isLiked" : "false",      
         "comments": ['test','was geht abbbbbbbbb',],
-        "likes": []
+        "likes": ['ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture']
     },
     {
         "author": "Strannik2",
@@ -23,8 +24,9 @@ let userInfos = [
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
         "posttext": 'wasgehgt',
+        "isLiked" : "false",
         "comments": ['schön','was geht bei dir ab krass',],
-        "likes": []
+        "likes": ['ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture']
     },
     {
         "author": "Strannik3",
@@ -36,8 +38,9 @@ let userInfos = [
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
         "posttext": '',
+        "isLiked" : "false",
         "comments": ['lol was geht',],
-        "likes": []
+        "likes": ['ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture']
     },
     {
         "author": "Strannik4",
@@ -49,8 +52,9 @@ let userInfos = [
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
         "posttext": '',
+        "isLiked" : "false",
         "comments": ['xxxx','xx',],
-        "likes": ['true','ture','true','ture','true','ture','true','ture',]
+        "likes": ['ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture']
     },
     {
         "author": "Strannik5",
@@ -62,8 +66,9 @@ let userInfos = [
         "sendicon": "./img/imgicons/sendIcon.svg",
         "saveicon": "./img/imgicons/saveIcon.svg",
         "posttext": '',
+        "isLiked" : "false",
         "comments": [],
-        "likes": []
+        "likes": ['ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture']
     },
     
 ];
