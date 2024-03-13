@@ -5,7 +5,7 @@ function returnHTML(user, i,) {
                 <div>
                     <button class="mMarginList buttonlist">
                     <div class="sMarginList" role="button">
-                    <img class="avatarImg" id="myImg${user}" src="${user.avatar}" alt="imgNr ${user}">
+                    <img onclick="openFullscreen('${user.avatar}',${i},'${user.posttext}','${user.avatar}','${user.author}')" class="avatarImg" id="myImg${user}" src="${user.avatar}" alt="imgNr ${user}">
                     </div>
                             <div>
                                 <span>${user.author}</span>
@@ -42,7 +42,7 @@ function newPostHTML(user, i, userLikeicon,) {
                                 </div>
 
                                 <div>
-                                    <img onclick="openFullscreen()" class="iconButtonSize" id="${user}" src="${user.commentsicon}" alt="imgNr${user.avatar}">
+                                    <img onclick="openFullscreen('${user.avatar}',${i},'${user.posttext}','${user.avatar}','${user.author}')" class="iconButtonSize" id="${i}" src="${user.commentsicon}" alt="imgNr${user.avatar}">
                                 </div>
                                 <div>
                                     <img class="iconButtonSize" id="myImg" src="${user.sendicon}" alt="imgNr${user}">
@@ -55,7 +55,7 @@ function newPostHTML(user, i, userLikeicon,) {
                             </div>
                         </div>
                     </div>
-                    <div id="">${user.posttext}</div>
+                    <div id="postText" style="max-width: 720px; word-wrap: break-word;">${user.posttext}</div>
                         <div id="comment${i}"></div>
                             <div class="padding">
                                 <div class="flexContainerMessege">
@@ -109,6 +109,7 @@ function profileHTML(user, i,) {
 
 
 function modalFunction(i) {
+    selectImage('1');
     return `
     <div class="modal-content">  
     <span class="close" onclick="closeModal(${i})">&times;</span>
@@ -123,7 +124,7 @@ function modalFunction(i) {
         <div style="display: flex; gap: 15px; justify-content: center;">
 
             <div class="image-selection">
-                <input type="radio" id="indicator1" name="Choose" src="./img/ImgProfiele/ninja-7701126_1280.jpg" onclick="selectImage('1')">
+                <input type="radio" id="indicator1" name="Choose" src="./img/ImgProfiele/ninja-7701126_1280.jpg" onclick="selectImage('1')" checked>
                 <label for="indicator1">
                     <img class="iconButtonSizeCreatePost" src="./img/ImgProfiele/ninja-7701126_1280.jpg" onclick="selectImage('1')" alt="Image 1">
                 </label>
@@ -150,16 +151,25 @@ function modalFunction(i) {
 }
 
 
-function modalPostIMG(user, i, x) {
-    return `
-    <div class="modalx-content">  
-    <span class="close" onclick="closeModal(${x})">&times;</span>
-    <div>
-    <img class="iconButtonSize" id="${user}" src="${user.avatar}" alt="imgNr${i}">
-    </div>
-    
+function modalPostIMG(imagePath, index, userPostText ,userAvatar,userAuthor ) {
+    return`
+    <span class="close" onclick="closeModal(${index})">&times;</span>
+    <div class="modalx-content">
+
+                <img class="modalx-img" src="${imagePath}" alt="Bild ${index}" >
+            <div class="">
+                <div class="">
+                    <img class="avatarImg" src="${userAvatar}" alt="Bild ${index}" > ${userAuthor}
+                </div>
+                <div class="">
+                        ${userPostText}
+                </div>
+            </div>
+
     </div>
 
 
-`
+`; 
 }
+
+

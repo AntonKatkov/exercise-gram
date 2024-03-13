@@ -491,7 +491,7 @@ input:checked+.slider:before {
 
 /* Fügt den Hover-Text hinzu und fügt eine Transparenz hinzu */
 .close::after {
-    content: ' Delete Post';
+    content: ' Delete ';
     font-size: 12px;
     color: #666;
     background-color: #e9e3e3;
@@ -532,7 +532,7 @@ input:checked+.slider:before {
 .modalx {
     display: none;
     /* Hidden by default */
-    position: fixed;
+    position: fixed ;
     /* Stay in place */
     z-index: 1;
     /* Sit on top */
@@ -542,26 +542,33 @@ input:checked+.slider:before {
     /* Full width */
     height: 100%;
     /* Full height */
-    /* overflow: auto; */
+    overflow: hidden;
     /* Enable scroll if needed */
     background-color: rgb(0, 0, 0);
     /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: hsl(0deg 1.36% 5.85% / 90%);
     /* Black w/ opacity */
 }
 
-/* Modal Content/Box */
 .modalx-content {
+    display: flex;
     background-color: #fefefe;
-    margin: 10% auto;
-    /* 15% from the top and centered */
-    padding: 15px;
+    margin: 1% auto;
     border: 1px solid #888;
     width: 80%;
-    /* Could be more or less, depending on screen size */
+
+
 }
 
 
+.modalx-img {
+
+    width: 80%;
+    object-fit: cover; 
+    width: 863px;
+    height: 863px;
+
+}
 
 
 
