@@ -173,9 +173,14 @@ function openFullscreen(imagePath, index, userPostText, userAvatar, userAuthor) 
 function closeModal(i) {
     let modal = document.getElementById("modal" + i) || document.getElementById("modalx" + i);
     if (modal) {
-        modal.style.display = "none";
+        modal.remove();
+        // modal.style.display = "none";
     }
+    
 }
+
+
+
 
 
 

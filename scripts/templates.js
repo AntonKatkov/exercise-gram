@@ -8,7 +8,7 @@ function returnHTML(user, i,) {
                     <img onclick="openFullscreen('${user.avatar}',${i},'${user.posttext}','${user.avatar}','${user.author}')" class="avatarImg" id="myImg${user}" src="${user.avatar}" alt="imgNr ${user}">
                     </div>
                             <div>
-                                <span>${user.author}</span>
+                                <span class="User">${user.author}</span>
                             <div>
                     </button>
                 </div>
@@ -28,7 +28,7 @@ function newPostHTML(user, i, userLikeicon,) {
                         <span class="close" onclick="deletePost(${i})">&times;</span>
                         <div class="displayFlex profielePadding">
                         <img  class="avatarImg" id="${user}" src="${user.avatar}" alt="imgNr ${user}">
-                        <span>${user.author}</span><span>*</span><span>${formattedDate}</span>
+                        <span class="User">${user.author}</span><span>*</span><span>${formattedDate}</span>
                     </div>
                             <div>
                             <img class="view-Post" id="myImg${user}" src="${user.avatar}" alt="imgNr ${user}">
@@ -55,7 +55,7 @@ function newPostHTML(user, i, userLikeicon,) {
                             </div>
                         </div>
                     </div>
-                    <div id="postText" style="max-width: 720px; word-wrap: break-word;">${user.posttext}</div>
+                    <div id="postText" class="postetText">${user.posttext}</div>
                         <div id="comment${i}"></div>
                             <div class="padding">
                                 <div class="flexContainerMessege">
@@ -74,9 +74,9 @@ function newPostHTML(user, i, userLikeicon,) {
 }
 function Usercomments(user, i, x, comment) {
     return `
-<div id="comment${i}_${x}" class="comentspadding">
+<div id="comment${i}_${x}" class="comentspadding postetText">
      <div class="User">${user.author}</div>
-        ${comment}
+        <span style="padding-left: 10px;">${comment}</span>
         <span class="delete-comment" onclick="deleteComment(${i}, ${x})">&times;</span>
 </div>`;
 }
@@ -91,8 +91,8 @@ function profileHTML(user, i,) {
                     
                     <a class="externlink" href=""><img role="button" class="avatarImg buttonProfilelist" id="myImg${user}" src="${user.avatar}" alt="imgNr ${user}"></a>
                         <div class="dflexC">
-                            <span role="button">${user.author}</span>
-                            <span>${user.authorName}</span>
+                            <span class="User" role="button">${user.author}</span>
+                            <span >${user.authorName}</span>
                         </div>
                     </div>
                     <div>
@@ -157,11 +157,13 @@ function modalPostIMG(imagePath, index, userPostText ,userAvatar,userAuthor ) {
     <div class="modalx-content">
 
                 <img class="modalx-img" src="${imagePath}" alt="Bild ${index}" >
-            <div class="">
-                <div class="">
-                    <img class="avatarImg" src="${userAvatar}" alt="Bild ${index}" > ${userAuthor}
+            <div class="modalxDiv">
+                <div class="modalxUserContent">
+                
+                    <img class="avatarImg" src="${userAvatar}" alt="Bild ${index}" >  <a href="#"><span>${userAuthor}</span></a> 
                 </div>
-                <div class="">
+                <div style="padding: 24px;">
+                
                         ${userPostText}
                 </div>
             </div>

@@ -2,6 +2,39 @@
     margin: 0px;
 }
 
+/* Für Webkit-Browser wie Chrome, Safari */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.1); /* Dunkle Farbe mit geringer Deckkraft */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1); /* Hintergrundfarbe des Tracks */
+}
+
+/* Für Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1); /* Farbe des Scrollbalkens und des Tracks */
+}
+
+
+
+::-webkit-scrollbar {
+    width: 1px; /* Breite des vertikalen Scrollbalkens */
+    height: 1px; /* Höhe des horizontalen Scrollbalkens */
+}
+
+/* Für Firefox */
+* {
+    scrollbar-width: thin; /* Firefox Option für dünne Scrollbalken */
+}
+
+
+
 html {
     scroll-behavior: smooth;
 }
@@ -475,23 +508,18 @@ input:checked+.slider:before {
     font-size: 28px;
     font-weight: bold;
     position: relative;
-    /* Für die Positionierung des ::after Pseudo-Elements */
     padding-right: 20px;
-    /* Stellt sicher, dass genügend Platz für den Hover-Text ist */
     transition: color 0.2s;
-    /* Weiche Farbübergänge beim Hovern */
 }
 
 .close:hover,
 .close:focus {
     color: black;
-    /* Farbänderung beim Hovern */
     cursor: pointer;
 }
 
-/* Fügt den Hover-Text hinzu und fügt eine Transparenz hinzu */
 .close::after {
-    content: ' Delete ';
+    content: ' Close ';
     font-size: 12px;
     color: #666;
     background-color: #e9e3e3;
@@ -499,22 +527,22 @@ input:checked+.slider:before {
     width: 75px;
     border-radius: 55px;
     position: absolute;
-    left: 30px;
-    /* Position des Hover-Texts, kann je nach Bedarf angepasst werden */
+    right: 30px;
     white-space: nowrap;
-    /* Verhindert den Zeilenumbruch des Hover-Texts */
     opacity: 0;
-    /* Startet als unsichtbar */
     transition: opacity 0.2s;
-    /* Weiche Übergänge für die Opazität */
 }
 
-/* Ändert die Opazität beim Hovern */
 .close:hover::after,
 .close:focus::after {
     opacity: 1;
-    /* Wird vollständig sichtbar beim Hovern */
 }
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
 
 .User {
     display: flex;
@@ -527,48 +555,95 @@ input:checked+.slider:before {
     font-size: 12px;
 }
 
-
-/* The Modal (background) */
 .modalx {
-    display: none;
-    /* Hidden by default */
-    position: fixed ;
-    /* Stay in place */
+    display: flex; /* Verwendet Flexbox für das Zentrieren */
+    justify-content: center; /* Zentriert Inhalt horizontal */
+    align-items: center; /* Zentriert Inhalt vertikal */
+    position: fixed;
     z-index: 1;
-    /* Sit on top */
     left: 0;
     top: 0;
     width: 100%;
-    /* Full width */
     height: 100%;
-    /* Full height */
-    overflow: hidden;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: hsl(0deg 1.36% 5.85% / 90%);
-    /* Black w/ opacity */
-}
-
-.modalx-content {
+    overflow: auto; /* Zeigt Scrollbalken nur wenn nötig */
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9); /* Schwarz mit leichter Transparenz */
+  }
+  
+  .modalx-content {
     display: flex;
     background-color: #fefefe;
-    margin: 1% auto;
+    margin: auto; /* Das ist wichtig für das Zentrieren zusammen mit Flexbox */
     border: 1px solid #888;
-    width: 80%;
+    margin-top: 5vh;
+    width: 80%; /* Oder die gewünschte Breite */
+    /* Hier können Sie eine Maximalbreite einstellen, wenn Sie möchten */
+    max-width: 1263px; /* Beispielsweise für eine maximale Breite */
+    /* Falls das Bild responsiv sein soll, können Sie auch max-height verwenden */
+    max-height: 90vh; /* Verhindert, dass das Modal zu hoch wird */
+  }
+  
+  /* Optional: Fügt eine Animation hinzu, wenn das Modal erscheint */
+  .modalx {
+    animation-name: fadein; /* Namen der Animationen */
+    animation-duration: 0.4s, 0.4s; /* Dauer der Animationen */
 
-
+  }
+  
+  
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-
 .modalx-img {
-
-    width: 80%;
     object-fit: cover; 
     width: 863px;
     height: 863px;
-
 }
+
+.modalxDiv {  
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    word-wrap: break-word;
+    overflow: auto; 
+    width: 500px;
+    padding: 14px;
+    height: 833px;
+  }
+
+ 
+.modalxUserContent {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+} 
+
+.postetText {
+    max-width: 720px; 
+    word-wrap: break-word;
+    padding: 14px;
+    max-height: 300px;
+    overflow-y: scroll; 
+    overflow-x: hidden;  
+    margin: 1%;
+    
+}
+
+/* Dunkelmodus-Stile */
+.dark-mode,
+.dark-mode .mainContentInputs,
+.dark-mode .sidenav,
+.dark-mode .modal-content,
+.dark-mode textarea,
+.dark-mode input,
+.dark-mode button,
+.dark-mode .modalxDiv {
+    color: #ffffff; /* Textfarbe */
+    background: rgb(32, 33, 36); /* Hintergrundfarbe */
+}
+
 
 
 
