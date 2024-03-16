@@ -28,29 +28,29 @@ function newPostHTML(user, i, userLikeicon,) {
                         <span class="close" onclick="deletePost(${i})">&times;</span>
                         <div class="displayFlex profielePadding">
                         <img  class="avatarImg" id="${user}" src="${user.avatar}" alt="imgNr ${user}">
-                        <span class="User">${user.author}</span><span>*</span><span>${formattedDate}</span>
+                        <span class="User">${user.author}</span><span>*</span><span class="">${formattedDate}</span>
                     </div>
-                            <div>
+                            <div onclick="liked(${i})" >
                             <img class="view-Post" id="myImg${user}" src="${user.avatar}" alt="imgNr ${user}">
                             </div>
                     </div>
                         <div class="iconspostbox">
                             <div class="iconsbuttons">
                                 <div style="display:Flex; flex-direction: column;">
-                                    <img class="iconButtonSize" id="Like${i}" onclick="liked(${i})" src="${userLikeicon}" alt="imgNr${user}">
+                                    <img class="iconButtonSize iconsvg" id="Like${i}" onclick="liked(${i})" src="${userLikeicon}" alt="imgNr${user}">
                                     ${user.likes.length > 0 ? `<div class="likeCount" id="like-count-${i}">${user.likes.length}</div>` : ''}
                                 </div>
 
                                 <div>
-                                    <img onclick="openFullscreen('${user.avatar}',${i},'${user.posttext}','${user.avatar}','${user.author}')" class="iconButtonSize" id="${i}" src="${user.commentsicon}" alt="imgNr${user.avatar}">
+                                    <img onclick="openFullscreen('${user.avatar}',${i},'${user.posttext}','${user.avatar}','${user.author}')" class="iconButtonSize iconsvg" id="${i}" src="${user.commentsicon}" alt="imgNr${user.avatar}">
                                 </div>
                                 <div>
-                                    <img class="iconButtonSize" id="myImg" src="${user.sendicon}" alt="imgNr${user}">
+                                    <img class="iconButtonSize iconsvg" id="myImg" src="${user.sendicon}" alt="imgNr${user}">
                                 </div>
                             </div>
                             <div>
                                 <div>
-                                    <img class="iconButtonSize" id="myImg" src="${user.saveicon}" alt="imgNr${user}">
+                                    <img class="iconButtonSize iconsvg" id="myImg" src="${user.saveicon}" alt="imgNr${user}">
                                 </div>
                             </div>
                         </div>
@@ -60,7 +60,9 @@ function newPostHTML(user, i, userLikeicon,) {
                             <div class="padding">
                                 <div class="flexContainerMessege">
                                 <textarea id="input${i}" class="inputfield" placeholder="Add as comment...." rows="1"></textarea>
-                                    <button class="flexContainerMessege " onclick="commendAdd(${i})">Post</button>
+                                    <div>
+                                        <button class="flexContainerMessege " onclick="commendAdd(${i})">Post</button>
+                                    <div>
                                 </div>
                             </div>
                         </div>
@@ -96,7 +98,7 @@ function profileHTML(user, i,) {
                         </div>
                     </div>
                     <div>
-                    <a style="color:Blue;" href="#">Follow</a>
+                    <a style="color: hsla(242, 88.4%, 56.3%, 1);" class="followButton"" href="#">Follow</a>
                     </div>
                 </div>
             </div>
@@ -121,7 +123,7 @@ function modalFunction(i) {
                         background images to choose from 
             </span>
         
-        <div style="display: flex; gap: 15px; justify-content: center;">
+        <div class="choice">
 
             <div class="image-selection">
                 <input type="radio" id="indicator1" name="Choose" src="./img/ImgProfiele/ninja-7701126_1280.jpg" onclick="selectImage('1')" checked>
@@ -157,10 +159,10 @@ function modalPostIMG(imagePath, index, userPostText ,userAvatar,userAuthor ) {
     <div class="modalx-content">
 
                 <img class="modalx-img" src="${imagePath}" alt="Bild ${index}" >
-            <div class="modalxDiv">
+            <div class="modalxDiv desktop-show">
                 <div class="modalxUserContent">
                 
-                    <img class="avatarImg" src="${userAvatar}" alt="Bild ${index}" >  <a href="#"><span>${userAuthor}</span></a> 
+                    <img class="avatarImg " src="${userAvatar}" alt="Bild ${index}" >  <a  class="userLinkPostet" href="#"><span>${userAuthor}</span></a> 
                 </div>
                 <div style="padding: 24px;">
                 

@@ -6,11 +6,12 @@ document.addEventListener('input', function (event) {
     }
 });
 
+
 function newInfoRender() {
     let content = document.getElementById('infoContent');
     content.innerHTML = '';
 
-    for (let i = 0; i < Math.min(userInfos.length, 6); i++) {
+    for (let i = 0; i < Math.min(userInfos.length, 5); i++) {
         let user = userInfos[i];
         content.innerHTML += returnHTML(user, i,);
         ;
@@ -57,10 +58,17 @@ function Start() {
 }
 
 function commendAdd(index) {
+    
     let inputs = document.getElementById(`input${index}`);
-    userInfos[index]['comments'].push(inputs.value)
-    saveUserInfo()
-    newPostRender()
+    
+    if (emptytestcomments(inputs.value)) {
+        return
+    } else {
+        userInfos[index]['comments'].push(inputs.value)
+        saveUserInfo()
+        newPostRender()
+    }
+
 }
 
 function autoAdjustHeight(textarea) {
@@ -180,10 +188,6 @@ function closeModal(i) {
 }
 
 
-
-
-
-
 function deletePost(i) {
     let delpost = document.getElementById(`post${i}`);
     if (delpost) {
@@ -195,6 +199,7 @@ function deletePost(i) {
     saveUserInfo();
     newPostRender();
     newInfoRender()
+    renderProfile()
 }
 
 function selectImage(selected) {
@@ -217,6 +222,15 @@ function emptytest(str) {
     // Prüfen, ob der übergebene String leer ist
     if (typeof str === 'string' && str.trim().length === 0) {
         alert('nickname or name are empty');
+        return true; // Der String ist leer
+    }
+    return false; // Der String ist nicht leer
+}
+
+function emptytestcomments(str) {
+    // Prüfen, ob der übergebene String leer ist
+    if (typeof str === 'string' && str.trim().length === 0) {
+        alert('text is empty');
         return true; // Der String ist leer
     }
     return false; // Der String ist nicht leer
@@ -287,10 +301,10 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
-
-
 function deleteComment(postIndex, commentIndex) {
     userInfos[postIndex]['comments'].splice(commentIndex, 1);
     saveUserInfo();
     newPostRender();
 }
+
+

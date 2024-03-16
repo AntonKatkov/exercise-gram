@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/mobile.css">
     <script src="./scripts/userInfo.js"></script>
     <script src="./scripts/templates.js"></script>
     <script src="./scripts/darkmode.js"></script>
     <script src="./scripts/script.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
 
 
 
@@ -23,40 +28,50 @@
     <div id="mySidenav" class="sidenav">
         <div>
             <nav class="navigation">
-                <a href="#" id="" class="" onclick="" target="_self">
-                    <img src="" alt="bild"> Home
+                <a href="#" id=""  onclick="" target="_self">
+                    <img class="iconsvg" src="/img/ImgIcons/home.svg" alt="bild"> <span class="desktop-show">Home</span> 
                 </a>
-                <a href="#" id="" class="" onclick="CreatePost()" target="_self">
-                    <img src="" alt="bild"> Create
+                <a href="#" id=""  onclick="CreatePost()" target="_self">
+                    <img class="iconsvg" src="/img/ImgIcons/postCreate.svg" alt="bild"> <span class="desktop-show">Create</span> 
                 </a>
+    
             </nav>
         </div>
+        
 
         <div class="navigation">
             <nav>
                 <div class="dark-mode-toggle">
-                    <span>Dark mode</span>
+                    <span class="desktop-show">Dark mode</span>
                     <label class="switch">
                         <input type="checkbox" id="darkModeSwitch">
                         <span class="slider round"></span>
                     </label>
                 </div>
-            </nav >
+            </nav>
         </div>
     </div>
-    <div id="verticalLine"></div>
+    <div id="verticalLine" class="desktop-show"></div>
 
     <div>
         <section id="mainS">
+            <div class="logo-container">
+                <img src=./img/ImgLogo/ExerciseGram.png alt="ExerciseGram logo" class="desktop-show main-logo">
+            </div>
             <main id="mainC" class="mainContent">
                 <div class="mainContentInputs">
                     <div class="newInfo" id="infoContent">
                     </div>
                     <div class="newPosts" id="postContent">
                     </div>
+                    <div class="ruls mobile-hide">
+                        <a href="#"><span>Datenschutz</span></a>
+                        <a href="#"><span>Richtlinien</span></a>
+                        <a href="#"><span>Licenses</span></a>
+                    </div>
                 </div>
-                <div>
-                    <div class="myProfile" id="profileContent"></div>
+                <div class="desktop-show">
+                    <div class="myProfile " id="profileContent"></div>
                     <footer class="footer">
                         <div class="ruls">
                             <a href="#"><span>Datenschutz</span></a>
@@ -70,6 +85,3 @@
 </body>
 
 </html>
-
-
-

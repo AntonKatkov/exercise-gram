@@ -17,9 +17,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function toggleDarkMode(isEnabled) {
+
     if (isEnabled) {
         document.body.classList.add("dark-mode");
         localStorage.setItem('darkMode', 'enabled');
+
+
     } else {
         document.body.classList.remove("dark-mode");
         localStorage.setItem('darkMode', 'disabled');
@@ -37,9 +40,4 @@ function toggleDarkMode(isEnabled) {
         localStorage.setItem('darkMode', 'disabled');
     }
 }
-
-
-
-
-
 

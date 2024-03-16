@@ -8,29 +8,35 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(0,0,0,0.1); /* Dunkle Farbe mit geringer Deckkraft */
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Dunkle Farbe mit geringer Deckkraft */
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0.1); /* Hintergrundfarbe des Tracks */
+    background: rgba(0, 0, 0, 0.1);
+    /* Hintergrundfarbe des Tracks */
 }
 
 /* Für Firefox */
 * {
     scrollbar-width: thin;
-    scrollbar-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1); /* Farbe des Scrollbalkens und des Tracks */
+    scrollbar-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
+    /* Farbe des Scrollbalkens und des Tracks */
 }
 
 
 
 ::-webkit-scrollbar {
-    width: 1px; /* Breite des vertikalen Scrollbalkens */
-    height: 1px; /* Höhe des horizontalen Scrollbalkens */
+    width: 1px;
+    /* Breite des vertikalen Scrollbalkens */
+    height: 1px;
+    /* Höhe des horizontalen Scrollbalkens */
 }
 
 /* Für Firefox */
 * {
-    scrollbar-width: thin; /* Firefox Option für dünne Scrollbalken */
+    scrollbar-width: thin;
+    /* Firefox Option für dünne Scrollbalken */
 }
 
 
@@ -42,23 +48,26 @@ html {
 a {
     text-decoration: none;
     color: black;
+    font-weight: bold;
 }
 
 body {
     margin: 0;
 }
 
-/* .navigation Img {
-    height: 24px;
-    width: 24px;
-    cursor: pointer;
-    margin-right: 24px;
+.logo-container {
+
+    text-align: center;
+    /* Zentriert das Logo */
+    padding: 20px 0;
+    /* Etwas Abstand oben und unten */
 }
 
-.navigation div {
-    display: flex;
-    align-items: center;
-} */
+.main-logo {
+    /* Weitere Stilisierung für das Logo, falls nötig */
+}
+
+
 
 section {
     width: 100%;
@@ -70,9 +79,6 @@ section {
     padding: 24px 0px 24px 335px;
     min-height: 100vh;
 }
-
-
-
 
 .mainContentInputs {
     background-color: white;
@@ -198,6 +204,10 @@ section {
 .flexContainerMessege,
 button {
     flex: 1 0 10px;
+    border-radius: 4px;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
 }
 
 .padding {
@@ -343,30 +353,31 @@ textarea {
     color: #818181;
     display: block;
     transition: 0.3s;
+    display: flex;
+}
+
+.sidenav img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
 }
 
 .sidenav a:hover {
-    color: #f1f1f1;
+    color: #080000;
+    display: flex;
 }
-
-
-/* @media screen and (max-height: 95vh) {
-    .sidenav {
-        padding-top: 15px;
-    }
-
-    .sidenav a {
-        font-size: 18px;
-    }
-} */
 
 .sidenav .dark-mode-toggle,
 .sidenav .more-menu {
-    padding: 8px 32px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Zentriert den Schalter horizontal */
+    align-items: center; /* Zentriert den Schalter vertikal */
+    height: 100%; /* Nimmt die volle Höhe des Elternelements an */
+    padding: 10px; /* Fügt etwas Innenabstand hinzu */
 }
+
+
+
 
 .sidenav .dark-mode-toggle span,
 .sidenav .more-menu span {
@@ -376,8 +387,8 @@ textarea {
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 50%; /* Passt die Breite des Schalters relativ zum Elternelement an */
+    height: 20px; /* Beispielhöhe, anpassbar */
 }
 
 .switch input {
@@ -394,18 +405,29 @@ textarea {
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    transition: .4s;
+    transition: 0.4s;
+    border-radius: 34px;
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
+    height: 90%; /* Passt die Höhe des Kreises relativ zum Schalter an */
+    width: 45%; /* Passt die Breite des Kreises relativ zum Schalter an */
+    left: 4%;
+    bottom: 5%;
     background-color: white;
-    transition: .4s;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    /* Anpassung für die Bewegung basierend auf der neuen Schaltergröße */
+    transform: translateX(calc(100% - 48%));
 }
 
 input:checked+.slider {
@@ -416,13 +438,6 @@ input:checked+.slider:before {
     transform: translateX(26px);
 }
 
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
 
 .inputModal {
     padding: 5px 8px 0 14px;
@@ -539,8 +554,13 @@ input:checked+.slider:before {
 }
 
 @keyframes fadeout {
-    from { opacity: 1; }
-    to { opacity: 0; }
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
 }
 
 
@@ -556,80 +576,96 @@ input:checked+.slider:before {
 }
 
 .modalx {
-    display: flex; /* Verwendet Flexbox für das Zentrieren */
-    justify-content: center; /* Zentriert Inhalt horizontal */
-    align-items: center; /* Zentriert Inhalt vertikal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Zeigt Scrollbalken nur wenn nötig */
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.9); /* Schwarz mit leichter Transparenz */
-  }
-  
-  .modalx-content {
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modalx-content {
     display: flex;
     background-color: #fefefe;
-    margin: auto; /* Das ist wichtig für das Zentrieren zusammen mit Flexbox */
+    margin: auto;
+    /* Das ist wichtig für das Zentrieren zusammen mit Flexbox */
     border: 1px solid #888;
     margin-top: 5vh;
-    width: 80%; /* Oder die gewünschte Breite */
+    width: 80%;
+    /* Oder die gewünschte Breite */
     /* Hier können Sie eine Maximalbreite einstellen, wenn Sie möchten */
-    max-width: 1263px; /* Beispielsweise für eine maximale Breite */
+    max-width: 1263px;
+    /* Beispielsweise für eine maximale Breite */
     /* Falls das Bild responsiv sein soll, können Sie auch max-height verwenden */
-    max-height: 90vh; /* Verhindert, dass das Modal zu hoch wird */
-  }
-  
-  /* Optional: Fügt eine Animation hinzu, wenn das Modal erscheint */
-  .modalx {
-    animation-name: fadein; /* Namen der Animationen */
-    animation-duration: 0.4s, 0.4s; /* Dauer der Animationen */
+    max-height: 90vh;
+    /* Verhindert, dass das Modal zu hoch wird */
+}
 
-  }
-  
-  
+/* Optional: Fügt eine Animation hinzu, wenn das Modal erscheint */
+.modalx {
+    animation-name: fadein;
+    /* Namen der Animationen */
+    animation-duration: 0.4s, 0.4s;
+    /* Dauer der Animationen */
+}
+
 @keyframes fadein {
-  from { opacity: 0; }
-  to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .modalx-img {
-    object-fit: cover; 
+    object-fit: cover;
     width: 863px;
     height: 863px;
 }
 
-.modalxDiv {  
+.modalxDiv {
     display: flex;
     flex-direction: column;
     border: 1px solid black;
     word-wrap: break-word;
-    overflow: auto; 
+    overflow: auto;
     width: 500px;
     padding: 14px;
     height: 833px;
-  }
+}
 
- 
+
 .modalxUserContent {
     display: flex;
     align-items: center;
     gap: 28px;
-} 
+}
 
 .postetText {
-    max-width: 720px; 
+    max-width: 720px;
     word-wrap: break-word;
     padding: 14px;
     max-height: 300px;
-    overflow-y: scroll; 
-    overflow-x: hidden;  
+    overflow-y: scroll;
+    overflow-x: hidden;
     margin: 1%;
-    
+
 }
+
+.choice {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
 
 /* Dunkelmodus-Stile */
 .dark-mode,
@@ -640,21 +676,24 @@ input:checked+.slider:before {
 .dark-mode input,
 .dark-mode button,
 .dark-mode .modalxDiv {
-    color: #ffffff; /* Textfarbe */
-    background: rgb(32, 33, 36); /* Hintergrundfarbe */
+    color: #ffffff;
+    /* Textfarbe */
+    background: rgb(32, 33, 36);
+    /* Hintergrundfarbe */
 }
 
+.iconsvg {
+    filter: invert(0);
+}
 
+.dark-mode .iconsvg {
+    filter: invert(1);
+    color: #fefefe;
+}
 
-
-
-
-
-
-
-
-
-
+.dark-mode .userLinkPostet {
+    color: #ffffff;
+}
 
 
 

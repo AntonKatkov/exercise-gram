@@ -1,0 +1,474 @@
+/* Standardmäßig werden Mobil-spezifische Elemente ausgeblendet und Desktop-spezifische Elemente angezeigt */
+.mobile-hide {
+    display: none;
+}
+
+.desktop-show {
+    display: block;
+    /* oder flex, inline etc., je nach Bedarf */
+}
+
+
+/* Für sehr kleine Bildschirme bis 320px */
+@media (max-width: 320px) {
+    .mobile-hide {
+        display: block;
+        /* Versteckt Elemente auf Mobilgeräten */
+    }
+
+    .desktop-show {
+        display: none;
+        /* Versteckt Elemente, die nur für Desktop gedacht sind */
+    }
+
+    .navigation {
+        gap: 4px;
+    }
+
+    .sidenav {
+        width: 25px;
+        padding: 0px;
+        height: 98vh;
+    }
+
+    .sidenav a {
+        padding: 6px 3px 0px 0px;
+    }
+
+    .sidenav img {
+        margin: 0;
+    }
+
+    .logo-container {
+        padding: 0;
+    }
+
+    .inputModal {
+        margin: 0px 5% 0px 0px;
+    }
+
+    .choice {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .close {
+        padding: 0px;
+    }
+
+    .iconButtonSizeCreatePost {
+        width: 100%;
+    }
+
+    .modal {
+        overflow: auto;
+    }
+
+    .section {
+        padding-left: 50px;
+    }
+
+    .mainContentInputs {
+        padding: 0px 0px 0px 0px;
+    }
+
+
+    .mainContent {
+        padding: 0px 0px 0px 0px;
+    }
+
+    .newInfo {
+        display: flex;
+        overflow: scroll;
+        gap: 5px;
+        width: 100%;
+        max-width: 300px;
+        padding-left: 50px;
+    }
+
+    .posts {
+        max-width: 89%;
+
+    }
+
+    .postetText {
+        padding: 4px;
+
+    }
+
+    .newPosts {
+        padding: 0px;
+        padding-left: 50px;
+    }
+
+    .mMarginList {
+        margin: 0px;
+    }
+
+    button {
+        padding: 0px;
+    }
+
+    .inputfield {
+        flex: 3 0 250px;
+    }
+
+    .modalx-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .modalx-content {
+        border: 1px solid #888;
+        margin-top: 50%;
+
+
+
+    }
+
+
+    /* Stil für den Umschalter */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        /* Breite des Schalters */
+        height: 40px;
+        /* Höhe für vertikale Ausrichtung */
+        /* Entfernt das margin für die Zentrierung und platziert den Schalter oben */
+    }
+
+    /* Positioniert den Schalter oben in der sidenav */
+    .sidenav .dark-mode-toggle {
+        padding: 0;
+        /* Entfernt das Padding */
+        display: flex;
+        justify-content: center;
+        /* Zentriert den Schalter horizontal */
+        width: 100%;
+        /* Stellt sicher, dass der Container die volle Breite einnimmt */
+    }
+
+    /* Stil für den Slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 20px;
+        /* Abrundung für vertikale Form */
+    }
+
+    /* Stil für den Slider vor dem Anklicken */
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        /* Höhe des Kreises */
+        width: 18px;
+        /* Breite des Kreises */
+        left: 1px;
+        /* Zentrierung von links */
+        bottom: 1px;
+        /* Startposition am unteren Rand */
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+    }
+
+    /* Stil für den Slider, wenn die Checkbox aktiviert ist */
+    input:checked+.slider {
+        background-color: #2196F3;
+    }
+
+    /* Stil für den Kreis des Sliders, wenn die Checkbox aktiviert ist */
+    input:checked+.slider:before {
+        transform: translatey(-20px);
+        /* Vertikale Bewegung des Kreises */
+    }
+
+    .slider.round {
+        border-radius: 50px;
+        /* Stellt sicher, dass die Enden des Schalters vollständig abgerundet sind */
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Füge hier deine spezifischen Stilanpassungen für Elemente bei 320px Bildschirmbreite hinzu */
+}
+
+/* Für kleine bis mittelgroße Bildschirme (321px bis 768px) */
+@media (min-width: 321px) and (max-width: 768px) {
+    .mobile-hide {
+        display: block;
+        /* Versteckt Elemente auf Mobilgeräten */
+    }
+
+    .desktop-show {
+        display: none;
+        /* Versteckt Elemente, die nur für Desktop gedacht sind */
+    }
+
+    .navigation {
+        gap: 4px;
+    }
+
+    .sidenav {
+        width: 25px;
+        padding: 0px;
+        height: 98vh;
+    }
+
+    .sidenav a {
+        padding: 6px 3px 0px 0px;
+    }
+
+    .sidenav img {
+        margin: 0;
+    }
+
+    .logo-container {
+        padding: 0;
+    }
+
+    .inputModal {
+        margin: 0px 5% 0px 0px;
+    }
+
+    .choice {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .close {
+        padding: 0px;
+    }
+
+    .iconButtonSizeCreatePost {
+        width: 100%;
+    }
+
+    .modal {
+        overflow: auto;
+    }
+
+    .section {
+        padding-left: 50px;
+    }
+
+    .mainContentInputs {
+        padding: 0px 0px 0px 0px;
+    }
+
+
+    .mainContent {
+        padding: 0px 0px 0px 0px;
+    }
+
+    .newInfo {
+        display: flex;
+        overflow: scroll;
+        gap: 5px;
+        width: 100%;
+        max-width: 300px;
+        padding-left: 50px;
+    }
+
+    .posts {
+        max-width: 89%;
+
+    }
+
+    .postetText {
+        padding: 4px;
+
+    }
+
+    .newPosts {
+        padding: 0px;
+        padding-left: 50px;
+    }
+
+    .mMarginList {
+        margin: 0px;
+    }
+
+    button {
+        padding: 0px;
+    }
+
+    .inputfield {
+        flex: 3 0 250px;
+    }
+
+    .modalx-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .modalx-content {
+        border: 1px solid #888;
+        margin-top: 50%;
+
+
+
+    }
+
+
+    /* Stil für den Umschalter */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        /* Breite des Schalters */
+        height: 40px;
+        /* Höhe für vertikale Ausrichtung */
+        /* Entfernt das margin für die Zentrierung und platziert den Schalter oben */
+    }
+
+    /* Positioniert den Schalter oben in der sidenav */
+    .sidenav .dark-mode-toggle {
+        padding: 0;
+        /* Entfernt das Padding */
+        display: flex;
+        justify-content: center;
+        /* Zentriert den Schalter horizontal */
+        width: 100%;
+        /* Stellt sicher, dass der Container die volle Breite einnimmt */
+    }
+
+    /* Stil für den Slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 20px;
+        /* Abrundung für vertikale Form */
+    }
+
+    /* Stil für den Slider vor dem Anklicken */
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        /* Höhe des Kreises */
+        width: 18px;
+        /* Breite des Kreises */
+        left: 1px;
+        /* Zentrierung von links */
+        bottom: 1px;
+        /* Startposition am unteren Rand */
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+    }
+
+    /* Stil für den Slider, wenn die Checkbox aktiviert ist */
+    input:checked+.slider {
+        background-color: #2196F3;
+    }
+
+    /* Stil für den Kreis des Sliders, wenn die Checkbox aktiviert ist */
+    input:checked+.slider:before {
+        transform: translatey(-20px);
+        /* Vertikale Bewegung des Kreises */
+    }
+
+    .slider.round {
+        border-radius: 50px;
+        /* Stellt sicher, dass die Enden des Schalters vollständig abgerundet sind */
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+}
+
+
+
+
+/* Große Geräte (Desktops, 1024px und darüber) */
+@media only screen and (min-width: 769px) {
+
+    .switch
+    {
+        .sidenav{
+            width: 200px;
+        }
+    
+        .switch {
+            width: 28%;
+    
+        }
+        #verticalLine {
+            left: 200px;
+        }
+        .logo-container {
+            display: flex;
+            text-align: center;
+            padding: 20px 0;
+            align-items: center;
+            justify-content: center;
+        }
+        .mainContentInputs {
+            padding: 0px 75px 0px 200px;
+        }
+        .dFlex {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    }
+}
+
+/* Sehr große Geräte (große Desktops, 1200px und darüber) */
+@media only screen and (min-width: 1200px) {
+    /* Stile hier einfügen */
+}
+
+/* Extra große Geräte (Extra große Desktops, 1600px und darüber) */
+@media only screen and (min-width: 1600px) {
+    /* Stile hier einfügen */
+}
