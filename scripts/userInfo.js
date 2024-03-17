@@ -83,7 +83,7 @@ let userInfos = [
         "posttext": '',
         "isLiked" : "false",
         "comments": [],
-        "likes": ['ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture']
+        "likes": ['ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture']
     },
     
 ];

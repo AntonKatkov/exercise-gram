@@ -94,6 +94,7 @@ section {
     background-size: contain;
     background-repeat: no-repeat;
     background-size: cover;
+    object-fit: cover;
 }
 .newInfo {
     display: flex;
