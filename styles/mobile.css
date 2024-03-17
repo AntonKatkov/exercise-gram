@@ -7,8 +7,6 @@
     display: block;
     /* oder flex, inline etc., je nach Bedarf */
 }
-
-
 /* Für sehr kleine Bildschirme bis 320px */
 @media (max-width: 320px) {
     .mobile-hide {
@@ -28,7 +26,10 @@
     .sidenav {
         width: 25px;
         padding: 0px;
-        height: 98vh;
+        height: 95vh;
+        top: 150px;
+        height: 80%;
+        background: transparent;
     }
 
     .sidenav a {
@@ -71,10 +72,9 @@
     .mainContentInputs {
         padding: 0px 0px 0px 0px;
     }
-
-
     .mainContent {
         padding: 0px 0px 0px 0px;
+        overflow: hidden;
     }
 
     .newInfo {
@@ -82,8 +82,7 @@
         overflow: scroll;
         gap: 5px;
         width: 100%;
-        max-width: 300px;
-        padding-left: 50px;
+        max-width: 290px;
     }
 
     .posts {
@@ -121,12 +120,7 @@
     .modalx-content {
         border: 1px solid #888;
         margin-top: 50%;
-
-
-
     }
-
-
     /* Stil für den Umschalter */
     .switch {
         position: relative;
@@ -148,7 +142,6 @@
         width: 100%;
         /* Stellt sicher, dass der Container die volle Breite einnimmt */
     }
-
     /* Stil für den Slider */
     .slider {
         position: absolute;
@@ -162,7 +155,6 @@
         border-radius: 20px;
         /* Abrundung für vertikale Form */
     }
-
     /* Stil für den Slider vor dem Anklicken */
     .slider:before {
         position: absolute;
@@ -200,38 +192,7 @@
         border-radius: 50%;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* Füge hier deine spezifischen Stilanpassungen für Elemente bei 320px Bildschirmbreite hinzu */
 }
-
 /* Für kleine bis mittelgroße Bildschirme (321px bis 768px) */
 @media (min-width: 321px) and (max-width: 768px) {
     .mobile-hide {
@@ -295,7 +256,6 @@
         padding: 0px 0px 0px 0px;
     }
 
-
     .mainContent {
         padding: 0px 0px 0px 0px;
     }
@@ -311,12 +271,10 @@
 
     .posts {
         max-width: 89%;
-
     }
 
     .postetText {
         padding: 4px;
-
     }
 
     .newPosts {
@@ -345,10 +303,7 @@
         border: 1px solid #888;
         margin-top: 50%;
 
-
-
     }
-
 
     /* Stil für den Umschalter */
     .switch {
@@ -425,50 +380,114 @@
 
 }
 
-
-
-
 /* Große Geräte (Desktops, 1024px und darüber) */
-@media only screen and (min-width: 769px) {
+@media (min-width: 769px) and (max-width: 996px) {
+    .sidenav {
+        width: 150px;
+    }
 
-    .switch
-    {
-        .sidenav{
-            width: 200px;
-        }
-    
-        .switch {
-            width: 28%;
-    
-        }
-        #verticalLine {
-            left: 200px;
-        }
-        .logo-container {
-            display: flex;
-            text-align: center;
-            padding: 20px 0;
-            align-items: center;
-            justify-content: center;
-        }
-        .mainContentInputs {
-            padding: 0px 75px 0px 200px;
-        }
-        .dFlex {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            justify-content: flex-start;
-        }
+    .switch {
+        width: 28%;
+    }
+
+    .newInfo {
+        display: flex;
+        max-width: 400px;
+        width: 100%;
+        overflow: scroll;
+    }
+
+    #verticalLine {
+        left: 152px;
+    }
+
+    .logo-container {
+        display: flex;
+        text-align: center;
+        padding: 20px 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mainContentInputs {
+        padding: 0px 75px 0px 438px;
+    }
+
+    .dFlex {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .mainContent {
+        overflow: hidden;
+    }
+
+    .sidenav .dark-mode-toggle {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 15px;
+    }
+
+    .slider:before {
+        left: 0%;
+    }
+
+    .logo-container {
+        padding: 20px 0px 0px 200px;
+    }
+
+    .iconButtonSizeCreatePost {
+        width: 100%;
+    }
+    .inputModal {
+        margin: 0px 5% 0px 0px;
     }
 }
 
 /* Sehr große Geräte (große Desktops, 1200px und darüber) */
-@media only screen and (min-width: 1200px) {
-    /* Stile hier einfügen */
+@media (min-width: 996px) and (max-width: 1300px) {
+
+    .iconButtonSizeCreatePost {
+        width: 100%;
+    }
+
+    .sidenav {
+        width: 152px;
+    }
+
+    .myProfile {
+        padding-left: 0;
+        width: 0;
+    }
+
+    .logo-container {
+        display: flex;
+        text-align: center;
+        padding: 20px 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #verticalLine {
+        left: 150px;
+    }
+
+    .mainContentInputs {
+        padding: 0px;
+    }
+
+    .mainContent {
+        padding: 24px 0px 24px 150px;
+    }
+    .inputModal {
+        margin: 0px 5% 0px 0px;
+    }
 }
 
 /* Extra große Geräte (Extra große Desktops, 1600px und darüber) */
-@media only screen and (min-width: 1600px) {
-    /* Stile hier einfügen */
+@media only screen and (min-width: 1034px) {
+
+
 }

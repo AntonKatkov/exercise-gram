@@ -15,7 +15,6 @@ function returnHTML(user, i,) {
             </li>
         </ul>`;
 }
-
 function newPostHTML(user, i, userLikeicon,) {
     let formattedDate = formatDate(new Date(user.createdAt));
     return `
@@ -82,7 +81,6 @@ function Usercomments(user, i, x, comment) {
         <span class="delete-comment" onclick="deleteComment(${i}, ${x})">&times;</span>
 </div>`;
 }
-
 function profileHTML(user, i,) {
     return `
     <div>
@@ -107,8 +105,6 @@ function profileHTML(user, i,) {
     `;
 
 }
-
-
 
 function modalFunction(i) {
     selectImage('1');
@@ -151,7 +147,6 @@ function modalFunction(i) {
 
   `
 }
-
 
 function modalPostIMG(imagePath, index, userPostText ,userAvatar,userAuthor ) {
     return`

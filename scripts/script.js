@@ -6,7 +6,6 @@ document.addEventListener('input', function (event) {
     }
 });
 
-
 function newInfoRender() {
     let content = document.getElementById('infoContent');
     content.innerHTML = '';
@@ -47,8 +46,6 @@ function renderProfile() {
     }
 }
 
-
-
 function Start() {
     loadUserInfo()
     likerender()
@@ -58,9 +55,7 @@ function Start() {
 }
 
 function commendAdd(index) {
-    
-    let inputs = document.getElementById(`input${index}`);
-    
+    let inputs = document.getElementById(`input${index}`);  
     if (emptytestcomments(inputs.value)) {
         return
     } else {
@@ -68,7 +63,6 @@ function commendAdd(index) {
         saveUserInfo()
         newPostRender()
     }
-
 }
 
 function autoAdjustHeight(textarea) {
@@ -124,14 +118,11 @@ function updateLikeCount(index) {
     }
 }
 
-
-
 function likerender() {
     userInfos.forEach(user => {
         user.isLiked = user.likes.includes('true');
     });
 }
-
 function formatDate(date) {
     let day = date.getDate();
     let month = date.getMonth() + 1; // Da Monate von 0 beginnen, addieren wir 1
@@ -141,8 +132,6 @@ function formatDate(date) {
     month = month < 10 ? '0' + month : month;
     return day + '.' + month + '.' + year; // Format: DD.MM.YYYY
 }
-
-
 function CreatePost(i) {
     // Modal dynamisch erstellen oder ein existierendes Modal finden
     let modal = document.getElementById("modal" + i);
@@ -157,7 +146,6 @@ function CreatePost(i) {
     // Modal anzeigen
     modal.style.display = "block";
 }
-
 function openFullscreen(imagePath, index, userPostText, userAvatar, userAuthor) {
     // Einen eindeutigen Identifier für das Modal erstellen
     let modalId = "modalx" + index; // oder eine andere Logik für ein einzigartiges ID-Schema
@@ -172,21 +160,17 @@ function openFullscreen(imagePath, index, userPostText, userAvatar, userAuthor) 
         modal.innerHTML = modalPostIMG(imagePath, index, userPostText, userAvatar, userAuthor)
         document.body.appendChild(modal);
     }
-
     // Modal anzeigen
     modal.style.display = "block";
 }
-
 
 function closeModal(i) {
     let modal = document.getElementById("modal" + i) || document.getElementById("modalx" + i);
     if (modal) {
         modal.remove();
         // modal.style.display = "none";
-    }
-    
+    }    
 }
-
 
 function deletePost(i) {
     let delpost = document.getElementById(`post${i}`);
@@ -211,11 +195,8 @@ function selectImage(selected) {
         '2': "science-fiction-1424446_1280.jpg",
         '3': "mind-544404_1280.png",
     };
-
     // Aktualisieren des ausgewählten Bildpfades
-
     selectedImageSrc = basePath + images[selected];
-
 }
 
 function emptytest(str) {
@@ -236,27 +217,21 @@ function emptytestcomments(str) {
     return false; // Der String ist nicht leer
 }
 
-
-
 function submitUserInfo() {
     let author = document.getElementById('authorInput')
     let authorName = document.getElementById('authorNameInput')
     let posttext = document.getElementById('posttext')
-
     if (!emptytest(author.value && authorName.value)) {
-
         saveextra(author.value, authorName.value, posttext.value)
         let ele = document.getElementsByName("Choose");
         for (let i = 0; i < ele.length; i++)
             ele[i].checked = false;
-
         closeModal();
         Start();
     }
 }
 
 function saveextra(author, authorName, posttext) {
-
     let userInfo = {
         "author": author,
         "authorName": authorName,
@@ -271,7 +246,6 @@ function saveextra(author, authorName, posttext) {
         "comments": [],
         "likes": []
     };
-
     userInfos.push(userInfo);
     saveUserInfo();
 
@@ -283,7 +257,6 @@ function saveextra(author, authorName, posttext) {
 function saveUserInfo() {
     localStorage.setItem('userInfos', JSON.stringify(userInfos));
 }
-
 function loadUserInfo() {
     // Prüfe, ob bereits Daten im localStorage vorhanden sind
     let storedUserInfos = localStorage.getItem('userInfos');
@@ -292,15 +265,12 @@ function loadUserInfo() {
         userInfos = JSON.parse(storedUserInfos);
     }
 }
-
 function openNav() {
     document.getElementById("mySidenav").style.width = "335px";
 }
-
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
-
 function deleteComment(postIndex, commentIndex) {
     userInfos[postIndex]['comments'].splice(commentIndex, 1);
     saveUserInfo();

@@ -1,60 +1,46 @@
 * {
     margin: 0px;
 }
-
 /* Für Webkit-Browser wie Chrome, Safari */
 ::-webkit-scrollbar {
     width: 5px;
 }
-
 ::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.1);
     /* Dunkle Farbe mit geringer Deckkraft */
 }
-
 ::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.1);
     /* Hintergrundfarbe des Tracks */
 }
-
 /* Für Firefox */
 * {
     scrollbar-width: thin;
     scrollbar-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
     /* Farbe des Scrollbalkens und des Tracks */
 }
-
-
-
 ::-webkit-scrollbar {
     width: 1px;
     /* Breite des vertikalen Scrollbalkens */
     height: 1px;
     /* Höhe des horizontalen Scrollbalkens */
 }
-
 /* Für Firefox */
 * {
     scrollbar-width: thin;
     /* Firefox Option für dünne Scrollbalken */
 }
-
-
-
 html {
     scroll-behavior: smooth;
 }
-
 a {
     text-decoration: none;
     color: black;
     font-weight: bold;
 }
-
 body {
     margin: 0;
 }
-
 .logo-container {
 
     text-align: center;
@@ -62,24 +48,18 @@ body {
     padding: 20px 0;
     /* Etwas Abstand oben und unten */
 }
-
 .main-logo {
     /* Weitere Stilisierung für das Logo, falls nötig */
 }
-
-
-
 section {
     width: 100%;
 }
-
 .mainContent {
     display: flex;
     justify-content: center;
     padding: 24px 0px 24px 335px;
     min-height: 100vh;
 }
-
 .mainContentInputs {
     background-color: white;
     display: flex;
@@ -89,27 +69,21 @@ section {
     padding: 0px 75px 0px 125px;
 
 }
-
 .sMarginList {
     margin: 5px 0px;
 }
-
 .mMarginList {
     margin: 0px 16px;
 }
-
 .mainContent ul {
     display: contents;
 }
-
 .mainContent ul li {
     list-style: none;
 }
-
 .mainContent a {
     background-size: cover;
 }
-
 .avatarImg {
     height: 56px;
     width: 56px;
@@ -121,59 +95,49 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 .newInfo {
     display: flex;
     max-width: 630px;
     width: 100%;
 }
-
 .newPosts {
     margin-top: 24px;
     display: flex;
     flex-direction: column-reverse;
 
 }
-
 .posts {
     max-width: 100%;
     width: min(470px, 100vw)
 }
-
 .displayFlex {
     text-align: center;
     display: flex;
     align-items: center;
     gap: 15px;
 }
-
 .view-Post {
     width: 100%;
     height: 100%;
     border-radius: 15px;
 }
-
 .profielePadding {
     padding: 0px 0px 12px 4px;
 }
-
 .iconspostbox {
     display: flex;
     justify-content: space-between;
     margin: 8px 0px;
     padding: 0px 5px;
 }
-
 .iconsbuttons {
     display: flex;
     gap: 15px;
 }
-
 .iconButtonSize {
     height: 24px;
     width: 24px;
 }
-
 .iconButtonSizeCreatePost {
     background: no-repeat center;
     background-size: cover;
@@ -181,26 +145,21 @@ section {
     width: 300px;
     height: 200px;
 }
-
-
 .iconButtonSize:hover {
     filter: opacity(0.5);
     cursor: pointer;
 }
-
 .buttonlist {
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
-
 .flexContainerMessege {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px;
 }
-
 .flexContainerMessege,
 button {
     flex: 1 0 10px;
@@ -209,31 +168,26 @@ button {
     border: none;
     cursor: pointer;
 }
-
 .padding {
     padding-top: 15px;
     padding-bottom: 15px;
 }
-
 .comentspadding {
     padding: 5px 0px 3px 0px;
     padding-left: 14px;
     overflow-wrap: break-word;
 }
-
 .onepxline {
     margin: 10px 0;
     border: 0;
     border-top: 1px solid #383838;
 }
-
 .myProfile {
     display: flex;
     padding-left: 64px;
     flex-direction: column;
     width: 383px;
 }
-
 .buttonProfilelist {
     display: flex;
     background-color: transparent;
@@ -241,24 +195,21 @@ button {
     cursor: pointer;
     align-items: center;
     gap: 15px;
+    object-fit: cover;
 }
-
 .dFlex {
     display: flex;
     align-items: center;
     gap: 15px;
     justify-content: space-between;
 }
-
 .dflexC {
     display: flex;
     flex-direction: column;
 }
-
 .gap {
     gap: 15px;
 }
-
 /* The Modal (background) */
 .modal {
     display: none;
@@ -280,7 +231,6 @@ button {
     background-color: rgba(0, 0, 0, 0.4);
     /* Black w/ opacity */
 }
-
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
@@ -291,12 +241,10 @@ button {
     width: 80%;
     /* Could be more or less, depending on screen size */
 }
-
 .image-selection {
     display: flex;
     flex-direction: column-reverse;
 }
-
 textarea {
     width: 100%;
     height: 150px;
@@ -308,7 +256,6 @@ textarea {
     font-size: 16px;
     resize: none;
 }
-
 .sidenav {
     height: 95vh;
     width: 0;
@@ -327,7 +274,6 @@ textarea {
     align-content: space-between;
     flex-direction: column;
 }
-
 #verticalLine {
     position: fixed;
     left: 335px;
@@ -339,13 +285,11 @@ textarea {
     background-color: #aaa;
     /* Die Farbe der Linie */
 }
-
 .navigation {
     display: flex;
     gap: 34px;
     flex-direction: column;
 }
-
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -355,48 +299,40 @@ textarea {
     transition: 0.3s;
     display: flex;
 }
-
 .sidenav img {
     width: 25px;
     height: 25px;
     margin-right: 10px;
 }
-
 .sidenav a:hover {
     color: #080000;
     display: flex;
 }
-
 .sidenav .dark-mode-toggle,
 .sidenav .more-menu {
     display: flex;
-    justify-content: center; /* Zentriert den Schalter horizontal */
-    align-items: center; /* Zentriert den Schalter vertikal */
-    height: 100%; /* Nimmt die volle Höhe des Elternelements an */
-    padding: 10px; /* Fügt etwas Innenabstand hinzu */
+    gap: 10px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 10px;
 }
-
-
-
-
 .sidenav .dark-mode-toggle span,
 .sidenav .more-menu span {
     color: #818181;
 }
-
 .switch {
     position: relative;
     display: inline-block;
-    width: 50%; /* Passt die Breite des Schalters relativ zum Elternelement an */
+    width: 50px; /* Passt die Breite des Schalters relativ zum Elternelement an */
     height: 20px; /* Beispielhöhe, anpassbar */
 }
-
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
-
 .slider {
     position: absolute;
     cursor: pointer;
@@ -408,7 +344,6 @@ textarea {
     transition: 0.4s;
     border-radius: 34px;
 }
-
 .slider:before {
     position: absolute;
     content: "";
@@ -420,25 +355,19 @@ textarea {
     transition: 0.4s;
     border-radius: 50%;
 }
-
 input:checked + .slider {
     background-color: #2196F3;
 }
-
 input:checked + .slider:before {
     /* Anpassung für die Bewegung basierend auf der neuen Schaltergröße */
     transform: translateX(calc(100% - 48%));
 }
-
 input:checked+.slider {
     background-color: #2196F3;
 }
-
 input:checked+.slider:before {
     transform: translateX(26px);
 }
-
-
 .inputModal {
     padding: 5px 8px 0 14px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, .7);
@@ -447,7 +376,6 @@ input:checked+.slider:before {
     border: 1px solid #5f6368;
     margin: 0px 80% 0px 0px;
 }
-
 .inputfield {
     flex: 3 0 300px;
     padding: 5px 8px 4px 14px;
@@ -459,12 +387,10 @@ input:checked+.slider:before {
     resize: none;
     overflow: auto;
 }
-
 /* Versteckt die Scrollbar für Webkit-Browser */
 .inputfield::-webkit-scrollbar {
     display: none;
 }
-
 /* Füge dies hinzu, um die Scrollbar vollständig zu verstecken */
 .inputfield {
     -ms-overflow-style: none;
@@ -472,19 +398,16 @@ input:checked+.slider:before {
     scrollbar-width: none;
     /* Firefox */
 }
-
 .flexContainerMessege {
     display: flex;
     align-items: flex-end;
     /* Stellt sicher, dass Elemente am Anfang der Flex-Box ausgerichtet sind */
 }
-
 .comentspadding {
     position: relative;
     padding-right: 20px;
     /* Platz für das X-Symbol */
 }
-
 .delete-comment {
     position: absolute;
     right: 0;
@@ -496,13 +419,11 @@ input:checked+.slider:before {
     transition: opacity 0.2s;
     /* Fügt eine kleine Animation hinzu, wenn man über das X hovert */
 }
-
 /* Stil für das Hovering über das X */
 .delete-comment:hover {
     opacity: 1;
     /* Macht das X deutlicher sichtbar beim Drüberfahren */
 }
-
 /* Fügt die Hover-Beschreibung hinzu */
 .delete-comment:hover::after {
     content: ' Delete comment';
@@ -516,7 +437,6 @@ input:checked+.slider:before {
     left: 20px;
     white-space: nowrap;
 }
-
 .close {
     color: #aaa;
     float: right;
@@ -526,13 +446,11 @@ input:checked+.slider:before {
     padding-right: 20px;
     transition: color 0.2s;
 }
-
 .close:hover,
 .close:focus {
     color: black;
     cursor: pointer;
 }
-
 .close::after {
     content: ' Close ';
     font-size: 12px;
@@ -547,12 +465,10 @@ input:checked+.slider:before {
     opacity: 0;
     transition: opacity 0.2s;
 }
-
 .close:hover::after,
 .close:focus::after {
     opacity: 1;
 }
-
 @keyframes fadeout {
     from {
         opacity: 1;
@@ -562,19 +478,15 @@ input:checked+.slider:before {
         opacity: 0;
     }
 }
-
-
 .User {
     display: flex;
     font-weight: bold;
 }
-
 .likeCount {
     color: #aaa;
     float: right;
     font-size: 12px;
 }
-
 .modalx {
     display: flex;
     justify-content: center;
@@ -589,7 +501,6 @@ input:checked+.slider:before {
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.9);
 }
-
 .modalx-content {
     display: flex;
     background-color: #fefefe;
@@ -606,7 +517,6 @@ input:checked+.slider:before {
     max-height: 90vh;
     /* Verhindert, dass das Modal zu hoch wird */
 }
-
 /* Optional: Fügt eine Animation hinzu, wenn das Modal erscheint */
 .modalx {
     animation-name: fadein;
@@ -614,7 +524,6 @@ input:checked+.slider:before {
     animation-duration: 0.4s, 0.4s;
     /* Dauer der Animationen */
 }
-
 @keyframes fadein {
     from {
         opacity: 0;
@@ -624,13 +533,11 @@ input:checked+.slider:before {
         opacity: 1;
     }
 }
-
 .modalx-img {
     object-fit: cover;
     width: 863px;
     height: 863px;
 }
-
 .modalxDiv {
     display: flex;
     flex-direction: column;
@@ -641,14 +548,11 @@ input:checked+.slider:before {
     padding: 14px;
     height: 833px;
 }
-
-
 .modalxUserContent {
     display: flex;
     align-items: center;
     gap: 28px;
 }
-
 .postetText {
     max-width: 720px;
     word-wrap: break-word;
@@ -659,13 +563,11 @@ input:checked+.slider:before {
     margin: 1%;
 
 }
-
 .choice {
     display: flex;
     gap: 15px;
     justify-content: center;
 }
-
 
 /* Dunkelmodus-Stile */
 .dark-mode,
@@ -681,23 +583,23 @@ input:checked+.slider:before {
     background: rgb(32, 33, 36);
     /* Hintergrundfarbe */
 }
-
 .iconsvg {
     filter: invert(0);
 }
-
 .dark-mode .iconsvg {
     filter: invert(1);
     color: #fefefe;
 }
-
 .dark-mode .userLinkPostet {
     color: #ffffff;
 }
-
-
-
-
+.logo-container {
+    text-align: center;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 

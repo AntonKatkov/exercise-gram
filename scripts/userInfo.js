@@ -1,10 +1,10 @@
 
 let userInfos = [
     {
-        "author": "Strannik",
-        "authorName": "Anton K",
+        "author": "Amelia",
+        "authorName": "Amy",
         "createdAt": Date(),
-        "avatar": "./img/ImgProfiele/img-1.png",
+        "avatar": "./img/ImgProfiele/img-1.jpg",
         "likeicon": "./img/imgicons/hearthIcon.svg",
         "commentsicon": "./img/imgicons/chatIcon.svg",
         "sendicon": "./img/imgicons/sendIcon.svg",
@@ -15,8 +15,8 @@ let userInfos = [
         "likes": ['ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture']
     },
     {
-        "author": "Strannik2",
-        "authorName": "hans",
+        "author": "Jo",
+        "authorName": "John",
         "createdAt": Date(),
         "avatar": "./img/ImgProfiele/img-2.jpg",
         "likeicon": "./img/imgicons/hearthIcon.svg",
@@ -29,10 +29,10 @@ let userInfos = [
         "likes": ['ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture']
     },
     {
-        "author": "Strannik3",
-        "authorName": "peter",
+        "author": "Leo",
+        "authorName": "Leon",
         "createdAt": Date(),
-        "avatar": "./img/ImgProfiele/img-1.png",
+        "avatar": "./img/ImgProfiele/img-3.jpg",
         "likeicon": "./img/imgicons/hearthIcon.svg",
         "commentsicon": "./img/imgicons/chatIcon.svg",
         "sendicon": "./img/imgicons/sendIcon.svg",
@@ -43,10 +43,10 @@ let userInfos = [
         "likes": ['ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture']
     },
     {
-        "author": "Strannik4",
-        "authorName": "julian",
+        "author": "Strannik",
+        "authorName": "Anton",
         "createdAt": Date(),
-        "avatar": "./img/ImgProfiele/img-2.jpg",
+        "avatar": "./img/ImgProfiele/img-4.jpg",
         "likeicon": "./img/imgicons/hearthIcon.svg",
         "commentsicon": "./img/imgicons/chatIcon.svg",
         "sendicon": "./img/imgicons/sendIcon.svg",
@@ -57,10 +57,25 @@ let userInfos = [
         "likes": ['ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture']
     },
     {
-        "author": "Strannik5",
-        "authorName": "Bober Kurwa",
+        "author": "BoBer Kurwa",
+        "authorName": "Bober",
         "createdAt": Date(),
-        "avatar": "./img/ImgProfiele/img-1.png",
+        "avatar": "./img/ImgProfiele/img-5.jpg",
+        "likeicon": "./img/imgicons/hearthIcon.svg",
+        "commentsicon": "./img/imgicons/chatIcon.svg",
+        "sendicon": "./img/imgicons/sendIcon.svg",
+        "saveicon": "./img/imgicons/saveIcon.svg",
+        "posttext": '',
+        "isLiked" : "false",
+        "comments": [],
+        "likes": ['ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture','ture']
+    },
+
+    {
+        "author": "JSON",
+        "authorName": "Testig-Why-not",
+        "createdAt": Date(),
+        "avatar": "./img/ImgProfiele/img-6.png",
         "likeicon": "./img/imgicons/hearthIcon.svg",
         "commentsicon": "./img/imgicons/chatIcon.svg",
         "sendicon": "./img/imgicons/sendIcon.svg",
